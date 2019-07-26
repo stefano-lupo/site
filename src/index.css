@@ -81,3 +81,7 @@ code {
 .caption .description {
   font-size: 80%;
 }
+
+.team-bio-modal .modal-content {
+  border-radius: 0;
+}
