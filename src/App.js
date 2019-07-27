@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import {
   Container,
 } from 'react-bootstrap';
@@ -26,7 +26,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* <Hero /> */}
-        <Container>
+        <Container fluid>
           <NavigationBar />
           <Switch>
             <Route exact path={HOME} component={Home} />

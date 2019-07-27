@@ -1,0 +1,170 @@
+$PRIMARY: #1C5D99;
+$SECONDARY: #BBCDE5;
+$BLACK: #020202;
+$GRAY: rgba(0,0,0, 0.015);
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap');
+
+/* Global */
+body {
+  margin: 0;
+  font-family: 'Darker Grotesque', sans-serif;
+  font-size: 1.3em;
+  // background-color: $GRAY;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1, h2, h3, h4, h5 {
+  text-transform: uppercase;
+  color: $PRIMARY;
+}
+
+.container, .container-fluid {
+  padding-bottom: 5%;
+}
+
+/* Common Elements */
+.btn-primary {
+  background-color: $PRIMARY;
+  border: 0;
+  border-radius: 0;
+  color: white;
+
+  :hover {
+    background-color: $SECONDARY;
+  }
+}
+
+/* Navbar */
+.navbar {
+  margin-bottom: 50px;
+  background-color: $PRIMARY;
+
+  .nav-link {
+    text-transform: uppercase;
+  }
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
+
+
+/* Hero */
+.hero {
+  /* Sizing */
+  width: 100vw;
+  height: 100vh;
+  
+  /* Flexbox stuff */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Text styles */
+  text-align: center;
+  color: white;
+
+  /* Background styles */
+  background-image: url(assets/img/header/airplane.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero h1 {
+  font-size: 500%;
+}
+
+
+/* About Us */
+#about-us .card-title {
+  text-transform: uppercase;
+  font-size: 120%;
+  color: $PRIMARY;
+  border-bottom: solid $GRAY 1px;
+  padding-bottom: 4%;
+}
+
+#about-us .card-img-top {
+  max-height: 130px;
+  max-width: 100%;
+  padding: 1vh;
+  width: auto;
+  height: auto;
+}
+
+#about-us .card {
+  margin-bottom: 5vh;
+}
+
+#about-us .card img {
+  // padding: 5vh 5vh;
+  // width: auto;
+  // height: auto;
+}
+
+/* Our Team */
+#our-team .thumbnail {
+  padding-bottom: 10%;
+
+}
+
+.thumbnail {
+  position: relative;
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.caption p {
+  padding: 0;
+  margin: 0;
+}
+
+.caption .name {
+  font-size: 110%;
+}
+
+.caption .title {
+  font-size: 80%;
+}
+
+.team-bio-modal .modal-content {
+  border-radius: 0;
+}
+
+
+
+
+/* Portfolio slides */
+.carousel-caption {
+  background-color: rgba(0,0,0, 0.5);
+
+  h3 {
+    font-size: 2em;
+    color: white;
+  }
+
+  p {
+    color: white;
+  }
+}

@@ -1,33 +1,65 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap");
+body {
+  margin: 0;
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 1.3em;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+h1 h2 h3 h4 h5 {
+  text-transform: uppercase;
+  color: #053c5e;
+}
+.navbar .nav-link {
+  text-transform: uppercase;
+}
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  color: white;
+  background-image: url(assets/img/header/airplane.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.hero h1 {
+  font-size: 500%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#our-team .thumbnail {
+  padding-bottom: 10%;
+}
+.thumbnail {
+  position: relative;
+}
+.caption {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: 100%;
   color: white;
+  background-color: rgba(0, 0, 0, 0.2);
 }
-
-.App-link {
-  color: #61dafb;
+.caption p {
+  padding: 0;
+  margin: 0;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.caption .name {
+  font-size: 110%;
+}
+.caption .title {
+  font-size: 80%;
+}
+.team-bio-modal .modal-content {
+  border-radius: 0;
 }

@@ -27,25 +27,7 @@ export default class NavigationBar extends React.Component {
 
   render() {
     return (
-      <Navbar bg="dark" variant="dark">
-        <LinkContainer to={HOME}>
-          <Navbar.Brand>
-            <Image
-              src={AelfLogo}
-              className="d-inline-block align-top"
-              height="50"
-            />
-          </Navbar.Brand>
-        </LinkContainer>
-        <LinkContainer to={HOME}>
-          <Navbar.Brand>
-            <Image
-              src={PresidioLogo}
-              className="d-inline-block align-top"
-              height="50"
-            />
-          </Navbar.Brand>
-        </LinkContainer>
+      <Navbar variant="dark">
         <Nav className="mr-auto">
           <LinkContainer to={PORTFOLIO}>
             <Nav.Link>Portfolio</Nav.Link>
@@ -54,10 +36,6 @@ export default class NavigationBar extends React.Component {
             <Nav.Link>Contact</Nav.Link>
           </LinkContainer>
         </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info">Search</Button>
-        </Form>
       </Navbar>
     );
   }

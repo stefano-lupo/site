@@ -1,21 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  Col,
-  Image,
-} from 'react-bootstrap';
 
+import Hero from '../components/Hero';
 import AboutUs from '../components/AboutUs';
 import OurTeam from '../components/team/OurTeam';
+import PortfolioSlides from '../components/PortfolioSlides';
 
-export default class Home extends React.Component {
-
-  render() {
-    return (
-      <div>
-        <AboutUs />
-        <OurTeam />
-      </div>
-    )
-  }
-}
+export default () => (
+  <div>
+    {/* <Hero /> */}
+    <AboutUs />
+    <OurTeam />
+    <PortfolioSlides />
+  </div>
+);

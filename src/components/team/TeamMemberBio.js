@@ -37,7 +37,7 @@ export default class TeamMemberBio extends React.Component {
                 <p>Incididunt id mollit Lorem ullamco proident culpa aliquip anim velit adipisicing aliquip laboris tempor pariatur. Occaecat ullamco dolore amet occaecat aliqua est proident commodo dolor cupidatat dolore labore consectetur. Consectetur irure in cupidatat id in id Lorem amet. </p>
                 <Row>
                   <Col xs={3}>
-                    <FontAwesomeIcon size="2x" icon={['fab', 'apple']} />
+                    <FontAwesomeIcon size="1x" icon={['fab', 'apple']} />
                   </Col>
                   <Col xs={9}>
                     <a href="tel:00353 86 555 22 11">
@@ -46,7 +46,7 @@ export default class TeamMemberBio extends React.Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={3}><FontAwesomeIcon icon={['fab', 'linkedin']} size="2x" /></Col>
+                  <Col xs={3}><FontAwesomeIcon icon={['fab', 'linkedin']} size="1x" /></Col>
                   <Col xs={9}>
                     <a href="https://www.linkedin.com/in/stephen-haire-9b4805123">
                       <p>{name}</p>
@@ -54,7 +54,7 @@ export default class TeamMemberBio extends React.Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={3}><FontAwesomeIcon icon="envelope" size="2x"/></Col>
+                  <Col xs={3}><FontAwesomeIcon icon="envelope" size="1x" /></Col>
                   <Col xs={9}><a href="mailto:stephen@aelfinc.com"><p>stephen@aelfinc.com</p></a></Col>
                 </Row>
               </Col>
