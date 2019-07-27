@@ -22,7 +22,9 @@ export default class TeamMemberBio extends React.Component {
       <Modal className="team-bio-modal" centered {...this.props} size="lg">
         <Modal.Header closeButton>
           <Modal.Title>
-            <p>{name} - {title}</p>
+            <p>
+              {name} - {title}
+            </p>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -34,14 +36,14 @@ export default class TeamMemberBio extends React.Component {
               <Col>
                 <p>Incididunt id mollit Lorem ullamco proident culpa aliquip anim velit adipisicing aliquip laboris tempor pariatur. Occaecat ullamco dolore amet occaecat aliqua est proident commodo dolor cupidatat dolore labore consectetur. Consectetur irure in cupidatat id in id Lorem amet. </p>
                 <Row>
-                  <Col xs={12}><span><FontAwesomeIcon icon={['fab', 'apple']} /></span><a href="tel:00353 86 555 22 11">
-                      <p>00353 86 555 22 11</p>
-                    </a></Col>
-                  {/* <Col xs={9}>
+                  <Col xs={3}>
+                    <FontAwesomeIcon size="2x" icon={['fab', 'apple']} />
+                  </Col>
+                  <Col xs={9}>
                     <a href="tel:00353 86 555 22 11">
                       <p>00353 86 555 22 11</p>
                     </a>
-                  </Col> */}
+                  </Col>
                 </Row>
                 <Row>
                   <Col xs={3}><FontAwesomeIcon icon={['fab', 'linkedin']} size="2x" /></Col>
@@ -52,14 +54,11 @@ export default class TeamMemberBio extends React.Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={3}><FontAwesomeIcon icon="envelope" /></Col>
+                  <Col xs={3}><FontAwesomeIcon icon="envelope" size="2x"/></Col>
                   <Col xs={9}><a href="mailto:stephen@aelfinc.com"><p>stephen@aelfinc.com</p></a></Col>
                 </Row>
-                
-                
               </Col>
             </Row>
-    
           </Container>
         </Modal.Body>
         <Modal.Footer>
@@ -75,4 +74,7 @@ export default class TeamMemberBio extends React.Component {
 TeamMemberBio.propTypes = {
   show: PropTypes.bool.isRequired,
   onHide: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  imgPath: PropTypes.string.isRequired,
 };
