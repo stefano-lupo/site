@@ -10,35 +10,6 @@ import {
   Row,
 } from 'react-bootstrap';
 
-const imageColumn = imagePath => (
-  <Col md={6}>
-    <Image fluid src={imagePath} />
-  </Col>
-);
-
-const infoColumn = (transaction, textAlignClassName) => {
-  const {
-    type,
-    asset,
-    model,
-    quantity,
-    partner,
-    date,
-    logoPath,
-  } = transaction;
-
-  const className = `${textAlignClassName} info-column`;
-
-  return (
-    <Col md={6} className={className}>
-      <h2>{asset} {type}</h2>
-      <p>Model: {model}</p>
-      <p>Quantity: {quantity}</p>
-      <p>Date: {date}</p>
-      <Image className="align-items-end border partner-logo" fluid src={logoPath} />
-    </Col>
-  );
-};
 
 export default class TransactionDetail extends React.Component {
 
@@ -49,27 +20,45 @@ export default class TransactionDetail extends React.Component {
 
   render() {
     const { listId, transaction } = this.props;
-    let columns = [];
-    let rowClassName = '';
-    let infoTextAlignClassName = '';
-    
+    const {
+      type,
+      asset,
+      model,
+      quantity,
+      partner,
+      date,
+      logoPath,
+      imagePath,
+    } = transaction;
 
+
+    let rowClassName = '';
+    let infoColTextAlign = 'text-center';
+    let infoColOrder = 1;
+     
+
+    // First and every second row
     if (listId % 2 === 0) {
       rowClassName = 'light-row';
-      infoTextAlignClassName = 'text-right';
-      columns = [imageColumn(transaction.imagePath), infoColumn(transaction, infoTextAlignClassName)];
-    } else {
-      // rowClassName = 'dark-row';
-      infoTextAlignClassName = 'text-left';
-      columns = [infoColumn(transaction, infoTextAlignClassName), imageColumn(transaction.imagePath)];
+      infoColTextAlign = 'text-center';
+      infoColOrder = 12;
     }
 
+    const className = `${infoColTextAlign} info-column`;
+
     return (
-      <Container className={rowClassName} fluid>
-        <Row>
-          {columns.map(col => col)}
-        </Row>
-      </Container>
+      <Row>
+        <Col md={{ span: 6, order: 6 }}>
+          <Image fluid src={imagePath} />
+        </Col>
+        <Col md={{ span: 6, order: infoColOrder }} className={className}>
+          <h2>{asset} {type}</h2>
+          <p>Model: {model}</p>
+          <p>Quantity: {quantity}</p>
+          <p>Date: {date}</p>
+          <Image className="align-self-end partner-logo" fluid src={logoPath} />
+        </Col>
+      </Row>
     );
   }
 }

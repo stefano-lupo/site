@@ -63,13 +63,17 @@ const sampleTransactions = [
 
 export default () => (
   <section id="transactions" className="container-fluid">
-    <h1>2018</h1>
-    {
-    sampleTransactions.map((val, idx) => <TransactionDetail key={idx} listId={idx} transaction={val} />)
-    }
-    <h1>2017</h1>
-    {
-    sampleTransactions.map((val, idx) => <TransactionDetail key={idx} listId={idx} transaction={val} />)
-    }
+    <div className="year">
+      <h1>2018</h1>
+      {
+      sampleTransactions.map((val, idx) => <TransactionDetail key={idx} listId={idx} transaction={val} />)
+      }
+    </div>
+    <div className="year">
+      <h1>2017</h1>
+      {
+      sampleTransactions.map((val, idx) => <TransactionDetail key={idx} listId={idx} transaction={val} />)
+      }
+    </div>
   </section>
 );

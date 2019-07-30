@@ -18,6 +18,7 @@ import Home from './pages/Home';
 import Transactions from './pages/Transactions';
 import Contact from './pages/Contact';
 import Lost from './pages/Lost';
+import Footer from './components/footer/Footer';
 
 library.add(fab, faCheckSquare, faCoffee, faEnvelope);
 
@@ -26,15 +27,14 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* <Hero /> */}
-        <Container fluid>
-          <NavigationBar />
-          <Switch>
-            <Route exact path={HOME} component={Home} />
-            <Route path={TRANSACTIONS} component={Transactions} />
-            <Route path={CONTACT} component={Contact} />
-            <Route component={Lost} />
-          </Switch>
-        </Container>
+        <NavigationBar />
+        <Switch>
+          <Route exact path={HOME} component={Home} />
+          <Route path={TRANSACTIONS} component={Transactions} />
+          <Route path={CONTACT} component={Contact} />
+          <Route component={Lost} />
+        </Switch>
+        <Footer />
       </div>
     </BrowserRouter>
   );

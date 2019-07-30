@@ -27,7 +27,7 @@ export default class NavigationBar extends React.Component {
 
   render() {
     return (
-      <Navbar variant="dark">
+      <Navbar fluid variant="dark">
         <Nav className="mr-auto">
           <LinkContainer to={HOME}>
             <Nav.Link>Home</Nav.Link>

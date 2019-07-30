@@ -41,7 +41,7 @@ export default class TeamMember extends React.Component {
     const { showingModal } = this.state;
 
     return (
-      <Col sm={4} md={3}>
+      <Col className="team-member-thumbnail" sm={4} md={3}>
         <div className="thumbnail" onClick={this.onMemberClick}>
           <Image fluid src={imgPath} />
           <div className="caption">
