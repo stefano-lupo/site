@@ -28,6 +28,12 @@ h1, h2, h3, h4, h5 {
   padding-bottom: 5%;
 }
 
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
 /* Common Elements */
 .btn-primary {
   background-color: $PRIMARY;
@@ -42,7 +48,7 @@ h1, h2, h3, h4, h5 {
 
 /* Navbar */
 .navbar {
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
   background-color: $PRIMARY;
 
   .nav-link {
@@ -166,5 +172,47 @@ h1, h2, h3, h4, h5 {
 
   p {
     color: white;
+  }
+}
+
+/* Transactions */
+#transactions {
+  h1 {
+    text-align: center;
+    padding: 1% 0;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  .col-md-6 {
+    padding: 0 0;
+  }
+
+  .container-fluid {
+    padding-bottom: 0;
+  }
+  
+  .light-row {
+    background-color: white;
+  }
+
+  .dark-row {
+    background-color: $PRIMARY;
+    color: white;
+
+    h2 {
+      color: white;
+    }
+  }
+
+  .info-column {
+    padding: 2vw 2vw;
+    max-height: 576px;
+  }
+
+  .partner-logo {
+    max-height: 100px;
   }
 }

@@ -11,7 +11,7 @@ import {
   Button,
 } from 'react-bootstrap';
 
-import { PORTFOLIO } from '../constants/Routes';
+import { TRANSACTIONS } from '../constants/Routes';
 
 import A330 from '../assets/img/planes-slideshow/A330-200.jpg';
 import Boeing from '../assets/img/planes-slideshow/boeing-747-100.jpg';
@@ -48,7 +48,7 @@ export default () => (
 
     <Row className="mt-1">
       <Col>
-        <Link to={PORTFOLIO} >
+        <Link to={TRANSACTIONS} >
           <Button size="lg" block>View Full Portfolio</Button>
         </Link>
       </Col>

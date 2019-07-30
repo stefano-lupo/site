@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import  { LinkContainer } from 'react-router-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import {
   Button,
@@ -18,7 +18,7 @@ import {
 
 import AelfLogo from '../assets/img/logos/aelf-logo.svg';
 import PresidioLogo from '../assets/img/logos/presidio-logo.png';
-import { HOME, PORTFOLIO, CONTACT } from '../constants/Routes';
+import { HOME, TRANSACTIONS, CONTACT } from '../constants/Routes';
 
 export default class NavigationBar extends React.Component {
   componentDidMount() {
@@ -29,8 +29,11 @@ export default class NavigationBar extends React.Component {
     return (
       <Navbar variant="dark">
         <Nav className="mr-auto">
-          <LinkContainer to={PORTFOLIO}>
-            <Nav.Link>Portfolio</Nav.Link>
+          <LinkContainer to={HOME}>
+            <Nav.Link>Home</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to={TRANSACTIONS}>
+            <Nav.Link>Transactions</Nav.Link>
           </LinkContainer>
           <LinkContainer to={CONTACT}>
             <Nav.Link>Contact</Nav.Link>

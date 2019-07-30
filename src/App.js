@@ -12,10 +12,10 @@ import { faCheckSquare, faCoffee, faEnvelope } from '@fortawesome/free-solid-svg
 import Hero from './components/Hero';
 import NavigationBar from './components/NavigationBar';
 
-import { HOME, PORTFOLIO, CONTACT } from './constants/Routes';
+import { HOME, PORTFOLIO, CONTACT, TRANSACTIONS } from './constants/Routes';
 
 import Home from './pages/Home';
-import Portfolio from './pages/Portfolio';
+import Transactions from './pages/Transactions';
 import Contact from './pages/Contact';
 import Lost from './pages/Lost';
 
@@ -30,7 +30,7 @@ function App() {
           <NavigationBar />
           <Switch>
             <Route exact path={HOME} component={Home} />
-            <Route path={PORTFOLIO} component={Portfolio} />
+            <Route path={TRANSACTIONS} component={Transactions} />
             <Route path={CONTACT} component={Contact} />
             <Route component={Lost} />
           </Switch>
