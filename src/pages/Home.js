@@ -7,9 +7,9 @@ import PortfolioSlides from '../components/PortfolioSlides';
 
 export default () => (
   <div>
-    {/* <Hero /> */}
+    <Hero />
     <AboutUs />
-    <OurTeam />
+    {/* <OurTeam /> */}
     <PortfolioSlides />
   </div>
 );

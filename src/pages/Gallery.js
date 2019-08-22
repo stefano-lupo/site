@@ -11,7 +11,7 @@ export default class Contact extends React.Component {
   render() {
     return (
       <section>
-        <OurTeam />
+        <h1>Gallery</h1>
       </section>
     )
   }

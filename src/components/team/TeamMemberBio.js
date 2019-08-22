@@ -8,7 +8,7 @@ import {
   Modal,
   Row,
 } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class TeamMemberBio extends React.Component {
   componentDidMount() {
