@@ -15,65 +15,13 @@ import AirbusLogo from '../assets/img/partner-logos/airbus.png';
 import AirTransatLogo from '../assets/img/partner-logos/air-transat.png';
 import SurinamAirwaysLogo from '../assets/img/partner-logos/surinam-airways.png';
 
-
-const sampleTransactions = [
-  {
-    type: 'acquisition',
-    asset: 'airplane',
-    model: 'a340-300',
-    quantity: 2,
-    partner: 'airbus',
-    date: 'Late 2018',
-    imagePath: A330,
-    logoPath: AirbusLogo,
-  },
-  {
-    type: 'lease',
-    asset: 'airplane',
-    model: 'a320-200',
-    quantity: 4,
-    partner: 'air-transat',
-    date: 'Late 2018',
-    imagePath: AirTransat,
-    logoPath: AirTransatLogo,
-  },
-
-  {
-    type: 'acquisition',
-    asset: 'airplane',
-    model: 'a340-300',
-    quantity: 1,
-    partner: 'airbus',
-    date: 'Early 2018',
-    imagePath: AtlasGlobal,
-    logoPath: AirbusLogo,
-  },
-
-  {
-    type: 'lease',
-    asset: 'airplane',
-    model: 'a340-300',
-    quantity: 1,
-    partner: 'surinam-airways',
-    date: 'Early 2018',
-    imagePath: SurinamAirways,
-    logoPath: SurinamAirwaysLogo,
-  },
-];
+import TRANSACTION_DATA from '../data/TransactionData';
 
 export default () => (
   <section id="transactions" className="container-fluid">
-    <div className="year">
-      <h1>2018</h1>
-      {
-      sampleTransactions.map((val, idx) => <TransactionDetail key={idx} listId={idx} transaction={val} />)
-      }
-    </div>
-    <div className="year">
-      <h1>2017</h1>
-      {
-      sampleTransactions.map((val, idx) => <TransactionDetail key={idx} listId={idx} transaction={val} />)
-      }
-    </div>
+    {
+      TRANSACTION_DATA.map((val, idx) => <TransactionDetail key={idx} listId={idx} transaction={val} />)
+    }
+
   </section>
 );

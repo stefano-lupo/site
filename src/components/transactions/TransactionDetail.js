@@ -56,7 +56,7 @@ export default class TransactionDetail extends React.Component {
           <p>Model: {model}</p>
           <p>Quantity: {quantity}</p>
           <p>Date: {date}</p>
-          <Image className="align-self-end partner-logo" fluid src={logoPath} />
+          <Image className="partner-logo" fluid src={logoPath} />
         </Col>
       </Row>
     );

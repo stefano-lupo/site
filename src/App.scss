@@ -1,9 +1,18 @@
 
-$SECONDARY: #DCC48E;
-$BLACK: #020202;
-$NAVY: #001021;
-$GRAY: rgba(0,0,0, 0.015);
-$PRIMARY: $BLACK;
+$NAVY_DARK: rgba(0, 16, 33, 1);
+
+
+$NAVY: rgba(61, 90, 128, 1);
+$NAVY_TRANSPARENT: rgba(61, 90, 128, 0.5);
+
+$GRAY: rgba(124, 158, 178, 1);
+$GRAY_TRANSPARENT: rgba(124, 158, 178, 0.5);
+$BLUE: rgba(39, 93, 173, 1);
+
+$PRIMARY: $NAVY;
+$SECONDARY: $GRAY;
+
+$FLUID_MAX_WIDTH: 1200px;
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap');
@@ -21,33 +30,48 @@ section {
   padding-bottom: 5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 
 h1, h2, h3, h4, h5 {
   text-transform: uppercase;
   color: $PRIMARY;
+  font-weight: 500;
+}
+
+b {
+  color: $GRAY;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
 }
 
 /* Common Elements */
 .btn-primary {
-  background-color: $PRIMARY;
+  background-color: $GRAY;
   border: 0;
   border-radius: 0;
-  color: white; 
+  color: $NAVY; 
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-    color: $PRIMARY;
-    background-color: $SECONDARY;
+    color: white;
+    background-color: $NAVY;
     font-weight: bold;
     text-decoration: none !important;
 }
 
 .no-underline:hover {
   text-decoration: none;
+}
+
+a {
+  color: $BLUE;
+}
+
+hr {
+  color: $GRAY;
 }
 
 
@@ -65,47 +89,16 @@ h1, h2, h3, h4, h5 {
   a {
     color: white;
   }
+
+  .navbar-brand {
+    color: white;
+  }
 }
 
 .navbar-light .navbar-nav .nav-link {
   // color: white;
   color: white;
 }
-
-
-
-/* Hero */
-// .hero {
-//   /* Sizing */
-//   width: 100vw;
-//   height: 100vh;
-  
-//   /* Flexbox stuff */
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-  
-//   /* Text styles */
-//   text-align: center;
-//   color: white;
-
-//   /* Background styles */
-//   background-image: url(assets/img/header/airplane-wing.jpg);
-//   background-size: cover;
-//   background-position: center center;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-
-//   h1 {
-//     font-size: 500%;
-//     color: white;
-//   }
-
-//   h2 {
-//     font-size: 200%;
-//     color: white;
-//   }
-// }
 
 .masthead {
   position: relative;
@@ -114,7 +107,8 @@ h1, h2, h3, h4, h5 {
   min-height: 35rem;
   padding: 15rem 0;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.3)), color-stop(75%, rgba(22, 22, 22, 0.7)), to(#161616)), url(assets/img/header/airplane-wing.jpg);
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url(assets/img/header/airplane-wing.jpg);
+  // background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url(assets/img/header/airplane-wing-bw-tint.jpg);
+  background-image:  url(assets/img/header/airplane-wing-bw.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -123,13 +117,14 @@ h1, h2, h3, h4, h5 {
 }
 
 .masthead h1 {
-  font-family: 'Varela Round';
+  // font-family: 'Varela Round';
   font-size: 2.5rem;
   line-height: 2.5rem;
   letter-spacing: 0.8rem;
-  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  // background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  // -webkit-text-fill-color: transparent;
+  // -webkit-background-clip: text;
+  color: white;
 }
 
 .masthead h2 {
@@ -162,33 +157,126 @@ h1, h2, h3, h4, h5 {
 
 
 
-/* About Us */
-#about-us .card-title {
-  text-transform: uppercase;
-  font-size: 120%;
-  color: $PRIMARY;
-  border-bottom: solid $GRAY 1px;
-  padding-bottom: 4%;
+/* presidio-aelf */
+#presidio-aelf{
+  // max-width: $FLUID_MAX_WIDTH;
+  text-align: center;
+
+  .card-title {
+    text-transform: uppercase;
+    font-size: 120%;
+    color: $PRIMARY;
+    border-bottom: solid $GRAY 1px;
+    padding-bottom: 4%;
+  }
+
+  .card img {
+    // padding: 1vh 5vh;
+    // max-width: 500px;
+    // margin: auto;
+    // width: auto;
+    // height: auto;
+  }
+
+  .card {
+    margin-bottom: 5vh;
+    border: 0;
+    max-width: 600px;
+    margin: 0 auto 5vh auto;
+  }
+} 
+
+
+/* Statistics */
+#statistics {
+  text-align: center;
+  padding: 5% 0;
+  
+  .counting-stat {
+    font-size: 300%;
+  }
 }
 
-#about-us .card-img-top {
-  max-height: 130px;
-  max-width: 100%;
-  padding: 1vh;
-  width: auto;
-  height: auto;
+
+
+/* World Map */
+.map-wrapper {
+  min-height: 31vh;
 }
 
-#about-us .card {
-  margin-bottom: 5vh;
+.jvectormap-container {
+  background-color: $GRAY !important;
 }
 
-#about-us .card img {
-  // padding: 1vh 5vh;
-  margin: 10%;
-  // width: auto;
-  // height: auto;
+/* Mission Statement */
+#mission-statement {
+  text-align: center;
+  margin-bottom: 5%;
+
+  .icon {
+    color: $NAVY;
+  }
+
+  .statement-text {
+    font-size: 150%;
+    // font-style: italic;
+  }
+
+  .emphasis {
+    font-weight: bold;
+  }
+
+  .mechanism {
+    text-transform: uppercase;
+  }
 }
+
+/* Servies */
+#services {
+
+  button {
+    background-color: $GRAY_TRANSPARENT;
+    color: white;
+  }
+
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: white;
+    background-color: $NAVY_TRANSPARENT;
+    font-weight: bold;
+    text-decoration: none !important;
+  }
+
+  color: white;
+  h1, h2, h3, p {
+    text-align: center;
+    color: white;
+  }
+
+  .image-bg {
+    // background-image: url(assets/img/plane-stock-bw.jpg);
+    // background-image: url(assets/img/plane-stock-tinted2.jpg);
+    // background-image: url(assets/img/plane-stock-blur.jpg);
+    // background-image: url(assets/img/plane-wing-astro-denoised.jpg);
+    // background-image: url(assets/img/plane-sun.jpg);
+    background-image: url(assets/img/plane-sun-darkened.jpg);
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding-top: 2%;
+    
+  }
+
+  .service {
+    padding: 5% 0%;
+  }
+
+  @media(min-width: 1000px) {
+    .service {
+      padding: 5% 5%;
+    }
+  }
+}
+
 
 /* Our Team */
 #our-team {
@@ -266,6 +354,37 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* Recent Transactions */
+#recent-transactions {
+  padding: 5% 0;
+
+  .card:hover {
+    -webkit-box-shadow: 0px 0px 5px 0px $GRAY;
+    -moz-box-shadow: 0px 0px 5px 0px $GRAY;
+    box-shadow: 0px 0px 5px 0px $GRAY;
+
+    -webkit-transition: border 0.25s ease-in-out; /* Safari prior 6.1 */
+    transition:  border 0.25s ease-in-out;
+    -webkit-transition: box-shadow 0.25s ease-in-out; /* Safari prior 6.1 */
+    transition:  box-shadow 0.25s ease-in-out;
+    cursor: pointer;
+  }
+
+  .card-header {
+    text-transform: uppercase;
+    background-color: $NAVY;
+    color: white;
+    font-weight: 500;
+  }
+
+  .card-footer {
+    background-color: white;
+    color: $NAVY;
+  }
+
+}
+
+
 /* Transactions */
 #transactions {
   h1 {
@@ -280,6 +399,7 @@ h1, h2, h3, h4, h5 {
 
   p {
     font-size: 1.3em;
+    margin-bottom: 0;
   }
 
   .year {
@@ -310,6 +430,11 @@ h1, h2, h3, h4, h5 {
   .info-column {
     padding: 2vw 2vw;
     max-height: 576px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .partner-logo {
@@ -320,29 +445,33 @@ h1, h2, h3, h4, h5 {
 
 /* Footer */
 footer {
-  background-color: $SECONDARY;
+  background-color: $NAVY;
   padding: 1% 0 0 0;
   color: white;
 
   .column {
     padding: 1%;
   }
-  // flex: <grow> <shrink> <basis>
-  .partners-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex: 0 2 auto;
-    // justify-content: center;
-    // align-items: center;
-  }
 
-  .partners {
-    // flex: 5 0 auto;
-    // align-self: center;
-    // flex-grow: 1;
-    margin-top: auto;
-    margin-bottom: auto;
+  img {
+    padding: 10% 0;
   }
+  // flex: <grow> <shrink> <basis>
+  // .partners-wrapper {
+  //   display: flex;
+  //   flex-direction: column;
+  //   flex: 0 2 auto;
+  //   // justify-content: center;
+  //   // align-items: center;
+  // }
+
+  // .partners {
+  //   // flex: 5 0 auto;
+  //   // align-self: center;
+  //   // flex-grow: 1;
+  //   margin-top: auto;
+  //   margin-bottom: auto;
+  // }
 
   .contact-info {
     flex: 2 0 auto;
@@ -351,7 +480,20 @@ footer {
   h3, hr {
     color: white;
   }
-  
+
+  a {
+    color: $NAVY_DARK;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+}
+
+/* Copyright */
+#copyright {
+  display: flex;
+  // align-content: space-around;
+  // justify-content: space-around;
+  padding: 0.5% 0;
 }
 
 
