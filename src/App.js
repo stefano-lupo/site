@@ -7,7 +7,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab, faFacebook, faTwitter, faLinkedin, faGooglePlus } from '@fortawesome/free-brands-svg-icons';
-import { faCheckSquare, faCoffee, faEnvelope, faChartLine, faCreditCard, faLightbulb, faPeopleCarry, faBrain, faUserTie, faCopyright } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare, faCoffee, faEnvelope, faChartLine, faCreditCard, faLightbulb, faPeopleCarry, faBrain, faUserTie, faCopyright, faPhone, faLocationArrow, faBuilding } from '@fortawesome/free-solid-svg-icons';
 
 import NavigationBar from './components/NavigationBar';
 
@@ -21,13 +21,12 @@ import Contact from './pages/Contact';
 import Lost from './pages/Lost';
 import Footer from './components/footer/Footer';
 
-library.add(fab, faCheckSquare, faCoffee, faEnvelope, faChartLine, faCreditCard, faLightbulb, faPeopleCarry, faBrain, faUserTie, faCopyright);
+library.add(fab, faCheckSquare, faCoffee, faEnvelope, faChartLine, faCreditCard, faLightbulb, faPeopleCarry, faBrain, faUserTie, faCopyright, faPhone, faLocationArrow, faBuilding);
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <NavigationBar />
         <Switch>
           <Route exact path={HOME} component={Home} />
           <Route path={ABOUT_US} component={AboutUs} />

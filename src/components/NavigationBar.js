@@ -21,14 +21,39 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { HOME, TRANSACTIONS, PARTS_SUPPORT, CONTACT, ABOUT_US } from '../constants/Routes';
 
-export default class NavigationBar extends React.Component {
-  componentDidMount() {
+const NAVBAR_DEFAULT_CLASS_NAME = "fixed-top";
+const MASTHEAD_UNSCROLLED_CLASS_NAME = `${NAVBAR_DEFAULT_CLASS_NAME} navbar-masthead`;
 
+export default class NavigationBar extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(props);
+    this.state = ({
+      navbarClassName: this.getNavbarClassName()
+    });
+    this.updateNavbarClassState = this.updateNavbarClassState.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.isMastheadPage) {
+      window.addEventListener('scroll', this.updateNavbarClassState)
+    }
+  }
+
+  getNavbarClassName() {
+    return  window.pageYOffset <= 0 ? MASTHEAD_UNSCROLLED_CLASS_NAME : NAVBAR_DEFAULT_CLASS_NAME;
+  }
+
+  updateNavbarClassState() {
+    this.setState({
+      navbarClassName: this.getNavbarClassName()
+    });
   }
 
   render() {
+    const { navbarClassName } = this.state;
     return (
-      <Navbar collapseOnSelect className="fixed-top" expand="lg">
+      <Navbar collapseOnSelect className={navbarClassName} expand="lg">
         <LinkContainer to={HOME}>
           <Navbar.Brand href="/">AELF Inc.</Navbar.Brand>
         </LinkContainer>
@@ -61,4 +86,12 @@ export default class NavigationBar extends React.Component {
       </Navbar>
     );
   }
+}
+
+NavigationBar.propTypes = {
+  isMastheadPage: PropTypes.bool,
+}
+
+NavigationBar.defaultProps = {
+  isMastheadPage: false
 }

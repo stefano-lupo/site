@@ -5,6 +5,7 @@ import {
   Image,
 } from 'react-bootstrap';
 import TransactionDetail from '../components/transactions/TransactionDetail';
+import NavigationBar from '../components/NavigationBar';
 
 import A330 from '../assets/img/transactions/planes/airbus-a330.jpeg';
 import AirTransat from '../assets/img/transactions/planes/air-transat.jpeg';
@@ -19,6 +20,7 @@ import TRANSACTION_DATA from '../data/TransactionData';
 
 export default () => (
   <section id="transactions" className="container-fluid">
+    <NavigationBar />
     {
       TRANSACTION_DATA.map((val, idx) => <TransactionDetail key={idx} listId={idx} transaction={val} />)
     }

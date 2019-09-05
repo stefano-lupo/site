@@ -9,11 +9,13 @@ import Statistics from '../components/home/Statistics';
 import WorldMap from '../components/home/WorldMap';
 import PortfolioSlides from '../components/home/PortfolioSlides';
 import RecentTransactions from '../components/home/RecentTransactions';
+import NavigationBar from '../components/NavigationBar';
 
 export default class Home extends React.Component {
   render() {
     return (
       <div>
+        <NavigationBar isMastheadPage={true} />
         <Hero />
         <PresidioAelf />
         <MissionStatement />

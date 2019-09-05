@@ -6,10 +6,12 @@ import {
   Col,
   Image,
 } from 'react-bootstrap';
+import NavigationBar from '../components/NavigationBar';
 
 
 export default () => (
   <Container id="about-us">
+    <NavigationBar />
     <h1>About Presidio Aircraft Leasing</h1>
     <h1>About AELF Inc</h1>
   </Container>
