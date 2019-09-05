@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.69329d3c.chunk.css",
+    "main.js": "/static/js/main.fdb29da2.chunk.js",
+    "main.js.map": "/static/js/main.fdb29da2.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.e85ac582.chunk.js": "/static/js/2.e85ac582.chunk.js",
+    "static/js/2.e85ac582.chunk.js.map": "/static/js/2.e85ac582.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b9ad4e07aa6935e07af427c4a8e455f2.js": "/precache-manifest.b9ad4e07aa6935e07af427c4a8e455f2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.69329d3c.chunk.css.map": "/static/css/main.69329d3c.chunk.css.map",
+    "static/media/737.jpg": "/static/media/737.0cc06332.jpg",
+    "static/media/a350.jpg": "/static/media/a350.02438859.jpg",
+    "static/media/aelf-black-logo.png": "/static/media/aelf-black-logo.27ca99bc.png",
+    "static/media/air-transat.png": "/static/media/air-transat.f043bd7f.png",
+    "static/media/air-transat.jpeg": "/static/media/air-transat.f85ff3da.jpeg",
+    "static/media/airbus-a330.jpeg": "/static/media/airbus-a330.705e5546.jpeg",
+    "static/media/airbus.png": "/static/media/airbus.1175382c.png",
+    "static/media/App.scss": "/static/media/plane-sun-darkened.ec44711b.jpg",
+    "static/media/airplane.jpg": "/static/media/airplane.049e6d7b.jpg",
+    "static/media/atlas-global.jpeg": "/static/media/atlas-global.aa2fe500.jpeg",
+    "static/media/chicago-skyline.png": "/static/media/chicago-skyline.d9aa80c1.png",
+    "static/media/crj706.jpg": "/static/media/crj706.6e3e3ed2.jpg",
+    "static/media/extra.jpg": "/static/media/extra.26e6f0ef.jpg",
+    "static/media/hifly.png": "/static/media/hifly.6614eb0b.png",
+    "static/media/presidio-black-logo.png": "/static/media/presidio-black-logo.d2a6402b.png",
+    "static/media/surinam-airways.jpeg": "/static/media/surinam-airways.54cefcf1.jpeg",
+    "static/media/surinam-airways.png": "/static/media/surinam-airways.9ea0c68c.png"
+  }
+}
