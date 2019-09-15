@@ -17,23 +17,22 @@ import ChicagoSkyline from '../../assets/img/chicago-skyline.png';
 export default () => (
   <footer className="container-fluid">
     <div className="main-footer">
-      <Row>
-        <Col sm={6} md={{ span: 3, order: 1 }}>
+      <Row className="text-center">
+        <Col sm={6} md={4}>
           <h3>Our Partners</h3>
           <hr />
           <Partners />
         </Col>
-        <Col sm={6} md={{ span: 3, offset: 1, order: 3 }}>
+        <Col sm={6} md={{span: 4, offset: 4}}>
           <h3>Get In Touch</h3>
           <hr />
           <ContactDepartments />
-          <Image fluid src={ChicagoSkyline} />
         </Col>
-        <Col sm={12} md={{ span: 4, offset: 1, order: 2 }}>
+        {/* <Col sm={12} md={{ span: 4, offset: 1, order: 2 }}>
           <h3>Find Us!</h3>
           <hr />
           <GoogleMapPresidio />
-        </Col>
+        </Col> */}
       </Row>
     </div>
     <Copyright />

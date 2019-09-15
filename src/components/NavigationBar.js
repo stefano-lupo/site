@@ -18,8 +18,7 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
-import { HOME, TRANSACTIONS, PARTS_SUPPORT, CONTACT, ABOUT_US } from '../constants/Routes';
+import { HOME, AIRCRAFT, ENGINES, TRANSACTIONS, PARTS_SUPPORT, CONTACT } from '../constants/Routes';
 
 const NAVBAR_DEFAULT_CLASS_NAME = "fixed-top";
 const MASTHEAD_UNSCROLLED_CLASS_NAME = `${NAVBAR_DEFAULT_CLASS_NAME} navbar-masthead`;
@@ -27,31 +26,37 @@ const MASTHEAD_UNSCROLLED_CLASS_NAME = `${NAVBAR_DEFAULT_CLASS_NAME} navbar-mast
 export default class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+
     this.state = ({
-      navbarClassName: this.getNavbarClassName()
+      navbarClassName: this.getNavbarClassName(props.isMastheadPage)
     });
+
     this.updateNavbarClassState = this.updateNavbarClassState.bind(this);
   }
 
   componentDidMount() {
     if (this.props.isMastheadPage) {
+      console.log("Adding scroll listener for masthead page")
       window.addEventListener('scroll', this.updateNavbarClassState)
     }
   }
 
-  getNavbarClassName() {
-    return  window.pageYOffset <= 0 ? MASTHEAD_UNSCROLLED_CLASS_NAME : NAVBAR_DEFAULT_CLASS_NAME;
+  getNavbarClassName(isMastHeadPage) {
+    const isAtTopOfPage = window.pageYOffset <= 0;
+    return isMastHeadPage && isAtTopOfPage ? 
+      MASTHEAD_UNSCROLLED_CLASS_NAME : 
+      NAVBAR_DEFAULT_CLASS_NAME
   }
 
   updateNavbarClassState() {
     this.setState({
-      navbarClassName: this.getNavbarClassName()
+      navbarClassName: this.getNavbarClassName(this.props.isMastheadPage)
     });
   }
 
   render() {
     const { navbarClassName } = this.state;
+
     return (
       <Navbar collapseOnSelect className={navbarClassName} expand="lg">
         <LinkContainer to={HOME}>
@@ -60,8 +65,11 @@ export default class NavigationBar extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
-            <LinkContainer to={ABOUT_US}>
-              <Nav.Link>About Us</Nav.Link>
+            <LinkContainer to={AIRCRAFT}>
+              <Nav.Link>Aircraft</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to={ENGINES}>
+              <Nav.Link>Engines</Nav.Link>
             </LinkContainer>
             <LinkContainer to={TRANSACTIONS}>
               <Nav.Link>Transactions</Nav.Link>

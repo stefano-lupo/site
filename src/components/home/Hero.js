@@ -11,8 +11,8 @@ export default class Hero extends React.Component {
       <header className="masthead">
         <div className="container d-flex h-100 align-items-center">
           <div className="mx-auto text-center">
-            <h1 className="mx-auto my-0 text-uppercase">AELF Inc.</h1>
-            <h2 className="text-white-50 mx-auto mt-2 mb-5">Aircraft Leasing, Financing and Stuff.</h2>
+            <h1 className="mx-auto my-0 text-uppercase">Full-service commercial aircraft leasing group</h1>
+            {/* <h2 className="text-white-50 mx-auto mt-2 mb-5">We are a full-service commercial aircraft leasing group.</h2> */}
           </div>
         </div>
       </header>

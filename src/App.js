@@ -11,10 +11,11 @@ import { faCheckSquare, faCoffee, faEnvelope, faChartLine, faCreditCard, faLight
 
 import NavigationBar from './components/NavigationBar';
 
-import { HOME, ABOUT_US, TRANSACTIONS, PARTS_SUPPORT,  CONTACT } from './constants/Routes';
+import { HOME, TRANSACTIONS, PARTS_SUPPORT,  CONTACT, AIRCRAFT, ENGINES } from './constants/Routes';
 
 import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
+import Aircraft from './pages/Aircraft';
+import Engines from './pages/Engines';
 import Transactions from './pages/Transactions';
 import PartsSupport from './pages/PartsSupport';
 import Contact from './pages/Contact';
@@ -29,7 +30,8 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path={HOME} component={Home} />
-          <Route path={ABOUT_US} component={AboutUs} />
+          <Route path={AIRCRAFT} component={Aircraft} />
+          <Route path={ENGINES} component={Engines} />
           <Route path={TRANSACTIONS} component={Transactions} />
           <Route path={PARTS_SUPPORT} component={PartsSupport} />
           <Route path={CONTACT} component={Contact} />

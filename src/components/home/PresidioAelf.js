@@ -25,7 +25,7 @@ const PresidioAelf = () => (
             <Card.Body>
               <Card.Title>Fleet Financing</Card.Title>
               <Card.Text>
-                Aircraft Engine Lease Finance Inc. is a privately held commercial aircraft and engine leasing company based in Puerto Rico. AELF provides customised fleet financing solutions to airlines around the world.
+                Aircraft Engine Lease Finance Inc. is a privately held commercial aircraft and engine leasing company based in Puerto Rico.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -36,7 +36,7 @@ const PresidioAelf = () => (
             <Card.Body>
               <Card.Title>Lease Management</Card.Title>
               <Card.Text>
-                Presidio Aircraft Leasing is based in Chicago, USA and is AELF’s exclusive lease management and marketing partner. We are dedicated to assisting airlines with all aspects of aircraft transitions, including managing surplus capacity through re-marketing and assisting with acquiring additional capacity, as well as its in-house parts procurement division to provide support during aircraft transitions and downtime.
+                Presidio Aircraft Leasing is the group's exclusive marketing partner based in Chicago, USA. Presidio provides AELF with acquisition, re-marketing and advisory services.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -51,7 +51,7 @@ const PresidioAelf = () => (
             <Card.Body>
               <Card.Title>Partnership</Card.Title>
               <Card.Text>
-                Presidio Aircraft Leasing provides acquisition, re-marketing, advisory and lease management services to AELF. The company maintains a professional team of in-house aircraft leasing experts, focused on ensuring aircraft investments are secure and appropriately managed.
+                Together, AELF and Presidio provide customized fleet financing solutions to airlines around the world. The group maintains a professional team of in-house aircraft leasing experts, focused on ensuring aircraft investments are secure and professionally managed
               </Card.Text>
             </Card.Body>
           </Card>

@@ -41,7 +41,7 @@ export default class Partners extends React.Component {
   cycle() {
     setTimeout(() => {
       let { partnerIndex, reRender } = this.state;
-      partnerIndex = (partnerIndex + 2) % PARTNERS.length;
+      partnerIndex = (++partnerIndex) % PARTNERS.length;
       this.setState({ partnerIndex, reRender: !reRender });
       this.cycle();
     }, CYCLE_TIME_MS);
@@ -53,8 +53,7 @@ export default class Partners extends React.Component {
     return (
       <div className="partner-logos">
         <Fade spy={reRender}>
-          <Image fluid src={PARTNERS[partnerIndex]} />
-          <Image fluid src={PARTNERS[partnerIndex+1]} />
+          <Image fluid className="partner-image" src={PARTNERS[partnerIndex]} />
         </Fade>
       </div>
     )
