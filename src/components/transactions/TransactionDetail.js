@@ -38,7 +38,7 @@ export default class TransactionDetail extends React.Component {
      
 
     // First and every second row
-    if (listId % 2 === 0) {
+    if (listId % 2 !== 0) {
       rowClassName = 'light-row';
       infoColTextAlign = 'text-center';
       infoColOrder = 12;
@@ -58,6 +58,7 @@ export default class TransactionDetail extends React.Component {
           <p>Date: {date}</p>
           <Image className="partner-logo" fluid src={logoPath} />
         </Col>
+        <hr />
       </Row>
     );
   }

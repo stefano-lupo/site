@@ -101,5 +101,5 @@ NavigationBar.propTypes = {
 }
 
 NavigationBar.defaultProps = {
-  isMastheadPage: false
+  isMastheadPage: true
 }

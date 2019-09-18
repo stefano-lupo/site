@@ -18,8 +18,9 @@ import VideoCover from 'react-video-cover';
 
 const mediaComponent = (video, image) => {
   return video ? 
-    <VideoCover videoOptions={videoOptions(video, image)} className="media" /> : 
-    <Image fluid src={image} className="media" />
+    <VideoCover videoOptions={videoOptions(video, image)} className="media" /> 
+    : null
+    // : <Image fluid src={image} className="media" />
 }
 
 const videoOptions = (src, poster) => {
@@ -32,23 +33,41 @@ const videoOptions = (src, poster) => {
   }
 }
 
+const mediaContainerClassName = hasMarginBottom => {
+  const baseClassName = "px-0 masthead-correction media-container";
+  console.log(hasMarginBottom)
+  return !hasMarginBottom ? baseClassName : baseClassName + " mb-5"
+}
+
 export default class MediaBackground extends React.Component {
 
   constructor(props) {
     super(props);
+    // console.log(props.image)
     this.state = {
-      mediaComponent: mediaComponent(props.video, props.image)
+      mediaComponent: mediaComponent(props.video, props.image),
+      containerClassName: mediaContainerClassName(props.hasMarginBottom),
+      containerExtraStyles: props.video ? {} :
+        {
+          backgroundImage: `url(${props.image})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "50% 50%",
+          backgroundAttachment: "fixed"
+        } 
     }
   }
 
   render() {
-    const { mediaComponent } = this.state;
+    const { mediaComponent, containerClassName, containerExtraStyles } = this.state;
+
+    console.log(containerExtraStyles)
     return (
-      <Container fluid className="px-0 masthead-correction media-container">
+      <Container fluid className={containerClassName} style={containerExtraStyles}>
         <Row>
           <Col>
             <div className="media-overlay">
-              {this.props.overlay != null && this.props.overlay()}
+              {this.props.overlay}
             </div>
             {mediaComponent}
           </Col>
@@ -66,9 +85,10 @@ export default class MediaBackground extends React.Component {
 MediaBackground.propTypes = {
   video: PropTypes.object,
   image: PropTypes.object.isRequired,
-  overlay: PropTypes.func
+  overlay: PropTypes.elementType,
+  padBottom: PropTypes.bool,
 }
 
 MediaBackground.defaultProps = {
-  isVideo: false
+  hasMarginBottom: true
 }

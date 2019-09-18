@@ -13,20 +13,21 @@ import MediaBackground from '../components/MediaBackground';
 
 import video from '../assets/video/engine.mp4';
 import poster from '../assets/img/posters/engine-poster.jpg';
+import MediaBackgroundOverlay from '../components/MediaBackgroundOverlay';
 
-const overlay = () =>
-  <div>
-    <h1>Engine Solutions</h1>
-    <hr />
-    <h2>Sales, Leasing, Exchange and Financing</h2>
-  </div>
 
 export default () => (
   <section id="engines">
     <NavigationBar isMastheadPage={true} />
-    <MediaBackground overlay={overlay} video={video} image={poster}/>
+    <MediaBackground 
+      overlay={
+        <MediaBackgroundOverlay 
+          title={"Engine Solutions"} 
+          body={<h2>Sales, Leasing, Exchange and Financing</h2>} />}
+      video={video} 
+      image={poster} />
 
-    <Container fluid>
+    <Container>
       <Row>
         <Col>
         <EyeCatcher 

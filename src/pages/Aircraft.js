@@ -11,18 +11,17 @@ import NavigationBar from '../components/NavigationBar';
 import MediaBackground from '../components/MediaBackground';
 
 import image from '../assets/img/header/airplane.jpg';
-
-const overlay = () =>
-  <div>
-    <h1>Aircraft Solutions</h1>
-    <hr />
-    <h2>Need Subtitle</h2>
-  </div>
+import MediaBackgroundOverlay from '../components/MediaBackgroundOverlay';
 
 export default () => (
   <section id="aircraft">
     <NavigationBar />
-    <MediaBackground overlay={overlay} image={image}/>
+    <MediaBackground 
+      overlay={
+        <MediaBackgroundOverlay 
+          title="Aircraft Solutions"
+          body={<h2>Need Subtitle</h2>} />}
+      image={image} />
     <Container>
     <h3>Our experience and innovative approach creates value driver partnerships with airlines across the globe.</h3>
 

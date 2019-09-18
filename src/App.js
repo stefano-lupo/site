@@ -7,7 +7,21 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab, faFacebook, faTwitter, faLinkedin, faGooglePlus } from '@fortawesome/free-brands-svg-icons';
-import { faCheckSquare, faCoffee, faEnvelope, faChartLine, faCreditCard, faLightbulb, faPeopleCarry, faBrain, faUserTie, faCopyright, faPhone, faLocationArrow, faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faCheckSquare,
+   faCoffee, 
+   faEnvelope, 
+   faChartLine, 
+   faCreditCard, 
+   faLightbulb, 
+   faPeopleCarry, 
+   faBrain, 
+   faUserTie, 
+   faCopyright, 
+   faPhone, 
+   faLocationArrow, 
+   faBuilding } 
+from '@fortawesome/free-solid-svg-icons';
 
 import NavigationBar from './components/NavigationBar';
 

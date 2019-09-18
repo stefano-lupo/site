@@ -8,23 +8,25 @@ import {
 } from 'react-bootstrap';
 import NavigationBar from '../components/NavigationBar';
 import MediaBackground from '../components/MediaBackground';
-
+import MediaBackgroundOverlay from '../components/MediaBackgroundOverlay';
 import image from '../assets/img/header/parts-support.jpg';
 
-const overlay = () => 
+const overlayBody = () => 
   <div>
-    <h1>Commercial Aircraft Parts Support</h1>
-    <hr />
     <p>Our group is an active and experience buyer and seller in the aircraft parts business.</p>
     <p>Gain access to an extensive inventory of aircraft parts and a truely global vendor network to source assets for all commercial aircraft
     </p>
   </div>
 
-
 export default () => (
   <section id="parts-support">
     <NavigationBar />
-    <MediaBackground image={image} overlay={overlay} />
+    <MediaBackground
+      overlay={
+        <MediaBackgroundOverlay 
+          title={"Commercial Aircraft Parts Support"}
+          body={overlayBody()} />}  
+      image={image} />
     <Container>
       <h2>Parts Sales</h2>
       <p>We maintain an extensive Miami-based warehouse of our own parts inventory, available to ship on demand to meet your scheduled or AOG(????) requirement. Our vast parts inventory is built through aircraft tear down and vendor marketplace access. </p>
