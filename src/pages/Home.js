@@ -15,17 +15,37 @@ import MediaBackgroundOverlay from '../components/MediaBackgroundOverlay';
 
 import AirplaneHero from '../assets/img/header/airplane-wing-bw.jpg';
 
+const OLD_HOME_PAGE = 
+  <div>
+    <NavigationBar />
+    {/* <Hero /> */}
+    <MediaBackground 
+      overlay={
+        <MediaBackgroundOverlay 
+          title="AELF & Presidio" 
+          body={<h2>We are a full-service commercial aircraft leasing group</h2>} 
+        />
+      }
+      image={AirplaneHero} />
+    <PresidioAelf />
+    <MissionStatement />
+    <Services />
+    <Statistics />
+    <WorldMap />
+    <PortfolioSlides />
+    <RecentTransactions />
+  </div>
+
 export default class Home extends React.Component {
   render() {
     return (
       <div>
         <NavigationBar />
-        {/* <Hero /> */}
         <MediaBackground 
           overlay={
             <MediaBackgroundOverlay 
               title="AELF & Presidio" 
-              body={<h2>Full-service commercial aircraft leasing group</h2>} 
+              body={<h2>We are a full-service commercial aircraft leasing group</h2>} 
             />
           }
           image={AirplaneHero} />
@@ -35,7 +55,7 @@ export default class Home extends React.Component {
         <Statistics />
         <WorldMap />
         <PortfolioSlides />
-        <RecentTransactions />
+        {/* <RecentTransactions /> */}
       </div>
   );
   }

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {
   Container,
   Col,
+  Row,
   Image,
 } from 'react-bootstrap';
 import NavigationBar from '../components/NavigationBar';
@@ -20,33 +21,31 @@ export default () => (
       overlay={
         <MediaBackgroundOverlay 
           title="Aircraft Solutions"
-          body={<h2>Need Subtitle</h2>} />}
+          body={<h2>A capital structure that provides investment flexibility</h2>} />}
       image={image} />
     <Container>
-    <h3>Our experience and innovative approach creates value driver partnerships with airlines across the globe.</h3>
+        
+      <h4>Our experience and innovative approach creates value driver partnerships with airlines across the globe.
+        We are a self funded aircraft leasing company, allowing us to pursue a flexible and creative strategy
 
-    <h3>Our capital structure provides investment flexibility</h3>
-    <ul>
-      <li>
-      We are a self funded aircraft leasing company, allowing us to pursue a flexible and creative strategy
-      </li>
-      <li>
-      Our entirely unencumbered asset base allows us to move deals quickly and adapt to changing market conditions
-      </li>
-    </ul>
+        Our entirely unencumbered asset base allows us to move deals quickly and adapt to changing market conditions
+        </h4>
 
-    <h3>Fleet Development</h3>
-    <ul>
-      <li>
-      We provide turn-key solutions for airlines undergoing fleet modernization and transition
-      </li>
-      <li>
-      As new aircraft types are phased in and out, we can implement cost effective and seamless fleet transitions
-      </li>
-      <li>
+    <Row>
+      <Col>
+      </Col>
+      <Col>
+      <h3>Fleet Development</h3>
+      <p>
+        We provide turn-key solutions for airlines undergoing fleet modernization and transition
+        As new aircraft types are phased in and out, we can implement cost effective and seamless fleet transitions
+
       Power by the hour and sale and leasebook transactions can provide airlines with significant flexibility while they focus on their operations.
-      </li>
-    </ul>
+
+      </p>
+      </Col>
+    </Row>
+    
 
     <h3>
       Sales, Leasing & Financing

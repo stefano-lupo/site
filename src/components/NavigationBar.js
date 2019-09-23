@@ -81,13 +81,13 @@ export default class NavigationBar extends React.Component {
               <Nav.Link>Contact</Nav.Link>
             </LinkContainer>
           </Nav>
-          <Nav.Link href="https://www.facebook.com/presidioaircraft">
+          <Nav.Link target="_blank" href="https://www.facebook.com/presidioaircraft">
             <FontAwesomeIcon icon={['fab', 'facebook']} />
           </Nav.Link>
-          <Nav.Link href="https://twitter.com/PresidioAir">
+          <Nav.Link target="_blank" href="https://twitter.com/PresidioAir">
             <FontAwesomeIcon icon={['fab', 'twitter']} />
           </Nav.Link>
-          <Nav.Link href="https://www.linkedin.com/company/presidio-aircraft-leasing">
+          <Nav.Link target="_blank" href="https://www.linkedin.com/company/presidio-aircraft-leasing">
             <FontAwesomeIcon icon={['fab', 'linkedin']} />
           </Nav.Link>
         </Navbar.Collapse>

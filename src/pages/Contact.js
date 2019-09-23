@@ -90,7 +90,7 @@ export default class Contact extends React.Component {
             </Col>
           </Row>
         </Container>
-        <OurTeam />
+        {/* <OurTeam /> */}
       </section>
     )
   }

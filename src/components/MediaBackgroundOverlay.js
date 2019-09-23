@@ -6,5 +6,7 @@ export default ({ title, body }) =>
       <h1>{title}</h1>
       <hr />
     </div>
-    {body}
+    <div className="body-wrapper">
+      {body}
+    </div>
   </div>

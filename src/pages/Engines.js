@@ -29,13 +29,14 @@ export default () => (
 
     <Container>
       <Row>
-        <Col>
-        <EyeCatcher 
-          title="We buy, lease and finance a variety of engines to power today's commercial aircraft" 
-          subtitle="We can tailor transaction structures to suit specific fleet goals" />
-          <h3>
-            Our engine solutions can help
-          </h3>
+        <Col sm={6}>
+          <h3>Purchasing, Leasing, Financing</h3>
+          <p>
+          We buy, lease and finance a variety of engines to power today's commercial aircraft. We can tailor transaction structures to suit specific fleet goals
+          </p>
+          </Col>
+          <Col sm={6}>
+          <h3>Our engine solutions can help</h3>
           <ul>
             <li>Provide flexibility during unscheduled maintenance</li>
             <li>Spare engine support</li>
