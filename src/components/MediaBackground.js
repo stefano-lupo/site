@@ -43,7 +43,9 @@ export default class MediaBackground extends React.Component {
 
   constructor(props) {
     super(props);
-    // console.log(props.image)
+    console.log(props)
+    const backgroundPosition = props.backgroundPosition.join(' ');
+    console.log(backgroundPosition);
     this.state = {
       mediaComponent: mediaComponent(props.video, props.image),
       containerClassName: mediaContainerClassName(props.hasMarginBottom),
@@ -52,7 +54,7 @@ export default class MediaBackground extends React.Component {
           backgroundImage: `url(${props.image})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "50% 50%",
+          backgroundPosition,
           backgroundAttachment: "fixed"
         } 
     }
@@ -87,8 +89,10 @@ MediaBackground.propTypes = {
   image: PropTypes.object.isRequired,
   overlay: PropTypes.elementType,
   padBottom: PropTypes.bool,
+  backgroundPosition: PropTypes.array
 }
 
 MediaBackground.defaultProps = {
-  hasMarginBottom: true
+  hasMarginBottom: true,
+  backgroundPosition: ['center', 'center']
 }

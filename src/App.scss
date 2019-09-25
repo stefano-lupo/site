@@ -320,6 +320,37 @@ hr {
   background-color:  !important;
 }
 
+/* Mission Statement Words */
+#mission-statement-words {
+  background-image: url('./assets/img/mission-statement.jpeg');
+  background-position: center bottom;
+  // background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-content: center;
+  align-items: center;
+
+  p, h2 {
+    color: white;
+  }
+
+  p {
+    font-size: 150%;
+  }
+
+  h2 {
+    font-size: 250%;
+  }
+}
+
+  
+@media(max-width: 600px) {
+  #mission-statement-words {
+    background-position: center bottom;
+  }
+}
+
 /* Mission Statement */
 #mission-statement {
   text-align: center;
@@ -505,7 +536,19 @@ hr {
  
 }
 
+/* Alternating column */
+.alternating-column-row {
+  padding: 3% 0;
 
+  .alternating-column-image-column {
+    padding: 0;
+  }
+
+  image {
+    padding: 0;
+    margin: 0;
+  }
+}
 
 /* Transactions */
 // #transactions {
@@ -580,6 +623,46 @@ hr {
 //     }
 //   }
 // }
+
+/* Transactions */
+#transactions {
+  // border: solid green 1px; 
+  #transaction-media-overlay {
+    height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: stretch;
+    // justify-content: stretch;
+    // align-content: stretch;
+    // align-self: stretch;
+    // border: solid red 1px;
+    
+    img {
+      // border: solid red 1px;
+    }
+
+    h1 {
+      font-size: 300%;
+    }
+    .transaction-row {
+      // border: solid blue 1px;
+      // display: flex;
+      // // flex-wrap: wrap;
+      // // flex-direction: row;
+      // justify-content: center;
+      // align-content: center;
+      // align-items: stretch;
+    }
+
+    .transaction-col {
+      // border: solid red 1px;
+      display: flex;
+      align-items: center;
+      align-content: flex-end;
+      justify-content: center;
+    }
+  }
+}
 
 
 /* Contact Us */

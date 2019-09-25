@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import Hero from '../components/home/Hero';
 import PresidioAelf from '../components/home/PresidioAelf';
 import MissionStatement from '../components/home/MissionStatement';
+import MissionStatementWords from '../components/home/MissionStatementWords';
 import Services from '../components/home/Services';
 import Statistics from '../components/home/Statistics';
 import WorldMap from '../components/home/WorldMap';
@@ -50,7 +51,7 @@ export default class Home extends React.Component {
           }
           image={AirplaneHero} />
         <PresidioAelf />
-        <MissionStatement />
+        <MissionStatementWords />
         <Services />
         <Statistics />
         <WorldMap />

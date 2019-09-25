@@ -65,6 +65,9 @@ export default class NavigationBar extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
+          <LinkContainer to={HOME}>
+              <Nav.Link>About Us</Nav.Link>
+            </LinkContainer>
             <LinkContainer to={AIRCRAFT}>
               <Nav.Link>Aircraft</Nav.Link>
             </LinkContainer>
