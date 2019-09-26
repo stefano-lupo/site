@@ -6,10 +6,10 @@ import {
   Image
 } from 'react-bootstrap';
 
-import Render737 from '../../assets/img/plane-renders/cropped/737-400.png';
-import RenderA340 from '../../assets/img/plane-renders/cropped/a340-300.png';
-import RenderCRJ1000 from '../../assets/img/plane-renders/cropped/crj-1000.png';
-import RandomEngine from '../../assets/img/plane-renders/cropped/random-engine.png';
+import Render737 from '../../assets/img/plane-renders/737-400.png';
+import RenderA340 from '../../assets/img/plane-renders/a340-300.png';
+import RenderCRJ1000 from '../../assets/img/plane-renders/crj-1000.png';
+import RandomEngine from '../../assets/img/plane-renders/random-engine.png';
 
 
 export default () =>

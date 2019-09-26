@@ -55,7 +55,7 @@ export default class MediaBackground extends React.Component {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition,
-          backgroundAttachment: "fixed"
+          // backgroundAttachment: "fixed"
         } 
     }
   }

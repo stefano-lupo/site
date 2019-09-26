@@ -53,7 +53,7 @@ export default () => (
     <MediaBackground
       overlay={<TransactionsMediaOverlay />}
       image={image} 
-      backgroundPosition={['center', '100%']} 
+      backgroundPosition={['center', 'bottom']} 
       hasMarginBottom={false} />
     <Container fluid className="transactions-body">
       <EyeCatcher content={EYE_CATCHER_CONTENT} />

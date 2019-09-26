@@ -141,12 +141,12 @@ hr {
 /* Background media */
 .media-container {
 
-  -ms-overflow-style: none;  // IE 10+
-  scrollbar-width: none;  // Firefox
+  // -ms-overflow-style: none;  // IE 10+
+  // scrollbar-width: none;  // Firefox
 
-  ::-webkit-scrollbar { 
-    display: none;  // Safari and Chrome
-}
+  // ::-webkit-scrollbar { 
+  //   display: none;  // Safari and Chrome
+  // }
 
   .media {
     top: 0;
@@ -178,7 +178,7 @@ hr {
      TODO: Hide scroll bar on transactions page
     ***************/
 
-    
+
     // ::-webkit-scrollbar {
     //   width: 0px;  /* Remove scrollbar space */
     //   background: transparent;  /* Optional: just make scrollbar invisible */
@@ -307,6 +307,7 @@ hr {
   background-image: url('./assets/img/home/mission-statement.jpg');
   background-position: center bottom;
   background-attachment: fixed;
+  background-size: cover;
   background-repeat: no-repeat;
   min-height: 70vh;
   display: flex;
@@ -662,8 +663,10 @@ hr {
     line-height: 70%;
   }
 
-  a {
-    color: $PRIMARY;
+  #contact-us-content {
+    a {
+      color: $PRIMARY;
+    }
   }
 }
 

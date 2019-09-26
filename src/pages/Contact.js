@@ -47,7 +47,7 @@ export default class Contact extends React.Component {
           } 
           image={image}
         />
-        <Container>
+        <Container id="contact-us-content">
           <EyeCatcher content={EYE_CATCHER_CONTENT} />
           <Row className="text-center locations">
             <Col >
