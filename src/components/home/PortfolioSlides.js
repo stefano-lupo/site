@@ -14,10 +14,10 @@ import {
 
 import { TRANSACTIONS } from '../../constants/Routes';
 
-import PLANE_A350 from '../../assets/img/jet-photos/a350.jpg';
-import PLANE_737 from '../../assets/img/jet-photos/737.jpg';
-import PLANE_CRJ706 from '../../assets/img/jet-photos/crj706.jpg';
-import EXTRA from '../../assets/img/jet-photos/extra.jpg';
+import PLANE_A350 from '../../assets/img/jet-photos/cropped/a350.jpg';
+import PLANE_737 from '../../assets/img/jet-photos/cropped/737.jpg';
+import PLANE_CRJ706 from '../../assets/img/jet-photos/cropped/crj706.jpg';
+import EXTRA from '../../assets/img/jet-photos/cropped/extra.jpg';
 
 
 
@@ -91,12 +91,12 @@ export default class PortfolioSlides extends React.Component {
 
     return (
       <Container fluid id="portolio">
-        <Row>
+        {/* <Row>
           <Col>
             <h1>Some of our Aircraft</h1>
             <p>Commodo minim id nostrud commodo enim aliqua ea excepteur magna nulla et quis laboris ea. Eu occaecat eu non excepteur. In mollit cillum duis eiusmod elit officia non labore tempor. Commodo adipisicing Lorem anim eiusmod ad et. Lorem ullamco et velit reprehenderit non occaecat pariatur sunt non nostrud excepteur ullamco eiusmod.</p>
             </Col>
-          </Row>
+          </Row> */}
         <Row>
           <Fade spy={reFadeWatcher}>
             <Image fluid src={IMAGES[imageIndex]} />

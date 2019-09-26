@@ -19,9 +19,13 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { HOME, AIRCRAFT, ENGINES, TRANSACTIONS, PARTS_SUPPORT, CONTACT } from '../constants/Routes';
+import PresidioLogo from '../assets/img/logos/presidio-purple-logo.png';
+import AelfLogo from '../assets/img/logos/aelf-purple-logo.png';
 
 const NAVBAR_DEFAULT_CLASS_NAME = "fixed-top";
 const MASTHEAD_UNSCROLLED_CLASS_NAME = `${NAVBAR_DEFAULT_CLASS_NAME} navbar-masthead`;
+
+const LOGO_HEIGHT = 75;
 
 export default class NavigationBar extends React.Component {
   constructor(props) {
@@ -60,7 +64,15 @@ export default class NavigationBar extends React.Component {
     return (
       <Navbar collapseOnSelect className={navbarClassName} expand="lg">
         <LinkContainer to={HOME}>
-          <Navbar.Brand href="/">AELF Inc.</Navbar.Brand>
+          {/* <Navbar.Brand href="/">AELF Inc.</Navbar.Brand> */}
+          <Navbar.Brand>
+            <Image
+              alt="Presidio Logo"
+              src={PresidioLogo}
+              height={LOGO_HEIGHT}
+              className="d-inline-block align-top"
+            />
+          </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -84,15 +96,16 @@ export default class NavigationBar extends React.Component {
               <Nav.Link>Contact</Nav.Link>
             </LinkContainer>
           </Nav>
-          <Nav.Link target="_blank" href="https://www.facebook.com/presidioaircraft">
-            <FontAwesomeIcon icon={['fab', 'facebook']} />
-          </Nav.Link>
-          <Nav.Link target="_blank" href="https://twitter.com/PresidioAir">
-            <FontAwesomeIcon icon={['fab', 'twitter']} />
-          </Nav.Link>
-          <Nav.Link target="_blank" href="https://www.linkedin.com/company/presidio-aircraft-leasing">
-            <FontAwesomeIcon icon={['fab', 'linkedin']} />
-          </Nav.Link>
+          <LinkContainer to={HOME}>
+            <Navbar.Brand>
+              <Image
+                alt="AELF Logo"
+                src={AelfLogo}
+                height={LOGO_HEIGHT}
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
+          </LinkContainer>
         </Navbar.Collapse>
       </Navbar>
     );

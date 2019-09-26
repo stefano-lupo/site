@@ -9,18 +9,21 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab, faFacebook, faTwitter, faLinkedin, faGooglePlus } from '@fortawesome/free-brands-svg-icons';
 import { 
   faCheckSquare,
-   faCoffee, 
-   faEnvelope, 
-   faChartLine, 
-   faCreditCard, 
-   faLightbulb, 
-   faPeopleCarry, 
-   faBrain, 
-   faUserTie, 
-   faCopyright, 
-   faPhone, 
-   faLocationArrow, 
-   faBuilding } 
+  faCoffee, 
+  faEnvelope, 
+  faChartLine, 
+  faCreditCard, 
+  faLightbulb, 
+  faPeopleCarry, 
+  faBrain, 
+  faUserTie, 
+  faCopyright, 
+  faPhone, 
+  faLocationArrow, 
+  faBuilding,
+  faHandshake,
+  faTools  
+} 
 from '@fortawesome/free-solid-svg-icons';
 
 import NavigationBar from './components/NavigationBar';
@@ -36,7 +39,7 @@ import Contact from './pages/Contact';
 import Lost from './pages/Lost';
 import Footer from './components/footer/Footer';
 
-library.add(fab, faCheckSquare, faCoffee, faEnvelope, faChartLine, faCreditCard, faLightbulb, faPeopleCarry, faBrain, faUserTie, faCopyright, faPhone, faLocationArrow, faBuilding);
+library.add(fab, faCheckSquare, faCoffee, faEnvelope, faChartLine, faCreditCard, faLightbulb, faPeopleCarry, faBrain, faUserTie, faCopyright, faPhone, faLocationArrow, faBuilding, faHandshake, faTools);
 
 function App() {
   return (

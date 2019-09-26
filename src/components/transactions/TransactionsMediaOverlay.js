@@ -6,10 +6,10 @@ import {
   Image
 } from 'react-bootstrap';
 
-import Render737 from '../../assets/img/plane-renders/737-400.png';
-import RenderA340 from '../../assets/img/plane-renders/a340-300.png';
-import RenderCRJ1000 from '../../assets/img/plane-renders/crj-1000.png';
-
+import Render737 from '../../assets/img/plane-renders/cropped/737-400.png';
+import RenderA340 from '../../assets/img/plane-renders/cropped/a340-300.png';
+import RenderCRJ1000 from '../../assets/img/plane-renders/cropped/crj-1000.png';
+import RandomEngine from '../../assets/img/plane-renders/cropped/random-engine.png';
 
 
 export default () =>
@@ -26,5 +26,11 @@ export default () =>
     <Col className="transaction-col" sm={6}><Image fluid src={RenderCRJ1000} /></Col>
     <Col className="transaction-col" sm={6}><h1>5 CRJ1000</h1></Col>
   </Row>  
+
+  { /* Engines */ }
+  <Row className="transaction-row">
+    <Col className="transaction-col" sm={6}><Image fluid src={RandomEngine} /></Col>
+    <Col className="transaction-col" sm={6}><h1>35 Engines</h1></Col>
+  </Row>
   
 </Container>

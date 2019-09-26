@@ -11,16 +11,26 @@ import NavigationBar from '../components/NavigationBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MediaBackground from '../components/MediaBackground';
 
-import image from '../assets/img/header/airplane.jpg';
+import image from '../assets/img/header/header-standin-wing.jpg';
 import MediaBackgroundOverlay from '../components/MediaBackgroundOverlay';
+import EyeCatcher from '../components/EyeCatcher';
 
-const overlayBody = () => 
-<div>
-  <p>For any general queries please contact </p>
-  <p> 
-    <a href="mailto:info@presidioaircraftleasing.com">info@presidioaircraftleasing.com</a>
-  </p>
-</div>
+const EYE_CATCHER_CONTENT = {
+  body: 
+    <p>
+      Presidio and AELF are split across 3 continents....... <br />
+      For any general queries please contact  <a href="mailto:info@presidioaircraftleasing.com">info@presidioaircraftleasing.com</a>
+    </p>
+}
+ 
+
+const OVERLAY_BODY = 
+  <div>
+    <p>For any general queries please contact </p>
+    <p> 
+      <a href="mailto:info@presidioaircraftleasing.com">info@presidioaircraftleasing.com</a>
+    </p>
+  </div>
 
 
 export default class Contact extends React.Component {
@@ -32,12 +42,13 @@ export default class Contact extends React.Component {
           overlay={
             <MediaBackgroundOverlay
               title="Get in touch"
-              body={overlayBody()}
+              body={OVERLAY_BODY}
             />
           } 
           image={image}
         />
         <Container>
+          <EyeCatcher content={EYE_CATCHER_CONTENT} />
           <Row className="text-center locations">
             <Col >
               <a target="_blank" href="https://goo.gl/maps/4wdogPTGcMJd1TTW7">

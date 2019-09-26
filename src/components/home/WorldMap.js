@@ -32,6 +32,45 @@ const MARKERS =  [
   {latLng: [0.33, 6.73], name: 'São Tomé and Príncipe'}
 ]
 
+const regions = [
+  "IE", "IT"
+]
+
+const INITIAL_COLOR = '#0a1428';
+const SELECTED_COLOR = '#0FA3B1';
+
+const regionStlye = {
+  initial: {
+    fill: INITIAL_COLOR,
+    'fill-opacity': 1,
+  },
+  hover: {
+    fill: 'red'
+  },
+  selected: {
+    fill: SELECTED_COLOR,
+  }
+}
+
+const regionLabelStyle = {
+  initial: {
+    'font-family': 'Darker Grotesque'
+  }
+}
+
+const containerStyle = {
+  width: '100%',
+  height: '100%',
+}
+
+const settings = {
+  regionStlye,
+  regionLabelStyle,
+  containerStyle,
+  zoomOnScroll: false,
+  panOnDrag: false
+}
+
 export default class WorldMap extends React.Component {
   render() {
     return (
@@ -39,19 +78,19 @@ export default class WorldMap extends React.Component {
         <h1 className="text-center">Expeirenced Worldwide</h1>
         <Row>
           <Col className="map-wrapper">
-            {/* <div style={{width: 500, height: 100}}> */}
               <VectorMap 
                 map={'world_mill'} 
-                // backgroundColor="#3b96ce" 
                 ref="map"
-                containerStyle={{
-                  width: '100%',
-                  height: '100%'
-                }}
+                selectedRegions={regions}
+                // markers={MARKERS}
                 containerClassName="map"
-                markers={MARKERS}
+
+                containerStyle={containerStyle}
+                regionLabelStyle={regionLabelStyle}
+                regionStyle={regionStlye}
+                zoomOnScroll={false}
+                panOnDrag={false}
             />
-            {/* </div> */}
           </Col>
         </Row>
       </section>

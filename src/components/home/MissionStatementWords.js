@@ -14,5 +14,4 @@ export default () =>
       </div>
       </Col>
     </Row>
-
   </Container>

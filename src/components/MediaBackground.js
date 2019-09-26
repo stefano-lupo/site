@@ -88,11 +88,11 @@ MediaBackground.propTypes = {
   video: PropTypes.object,
   image: PropTypes.object.isRequired,
   overlay: PropTypes.elementType,
-  padBottom: PropTypes.bool,
+  hasMarginBottom: PropTypes.bool,
   backgroundPosition: PropTypes.array
 }
 
 MediaBackground.defaultProps = {
-  hasMarginBottom: true,
+  hasMarginBottom: false,
   backgroundPosition: ['center', 'center']
 }

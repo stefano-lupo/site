@@ -11,7 +11,7 @@ import {
 
 import PresidioLogo from '../../assets/img/logos/presidio-black-logo.png';
 import AelfLogo from '../../assets/img/logos/aelf-black-logo.png';
-import JoinedLogo from '../../assets/img/logos/joined-logos.png';
+import JoinedLogo from '../../assets/img/logos/combined-logos.png';
 
 // const PresidioAelf = () => 
 //   <Container>
@@ -34,9 +34,25 @@ import JoinedLogo from '../../assets/img/logos/joined-logos.png';
 //   </Container>
 
 const PresidioAelf = () => (
-  <section id="presidio-aelf" className="container">
-    <h1 className="text-center">About our aircraft leasing group</h1>
-      <Row>
+  <Container id="presidio-aelf" className="py-5">
+    {/* <h1 className="text-center">About our aircraft leasing group</h1> */}
+    <Row>
+      <Col md={{span: 4, order: 2}}>
+        <Image className="combined-logos" fluid src={JoinedLogo} />
+      </Col>
+      <Col md={8}>
+      <h1>About Us</h1>
+      <p> 
+        Aircraft Engine Lease Finance Inc. is a privately held commercial aircraft and engine leasing company based in Puerto Rico.</p>
+      <p> 
+        Presidio Aircraft Leasing is the group's exclusive marketing partner based in Chicago, USA. Presidio provides AELF with acquisition, re-marketing and advisory services.</p>
+      <p>
+        Together, AELF and Presidio Aircraft Leasing provide customized fleet financing solutions to airlines around the world. The group maintains a professional team of in-house aircraft leasing experts, focused on ensuring aircraft investments are secure and professionally managed.
+      </p>
+      </Col>
+    </Row>
+    
+      {/* <Row>
         <Col>
         <CardDeck>
           <Card>
@@ -69,8 +85,8 @@ const PresidioAelf = () => (
             </Card.Body>
           </Card>
         </Col>
-      </Row>
-  </section>
+      </Row> */}
+  </Container>
 );
 
 
