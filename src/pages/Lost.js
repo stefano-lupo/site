@@ -1,13 +1,36 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 import { HOME } from '../constants/Routes';
+
 import NavigationBar from '../components/NavigationBar';
+import MediaBackground from '../components/MediaBackground';
+import MediaBackgroundOverlay from '../components/MediaBackgroundOverlay';
+import EyeCatcher from '../components/EyeCatcher';
+
+import image from '../assets/img/header/header-standin-wing.jpg';
+
+
+const EYE_CATCHER_CONTENT = {
+  body:
+    <div>
+      <p>Sorry about this, please <Link to={HOME}> head back to the homepage</Link></p>
+    </div>
+}
+
 
 export default () => (
-  <div>
+  <section id="lost">
     <NavigationBar />
-    <h3>Sorry, something went wrong</h3>
-    <Link to={HOME}><p>Return to homepage</p></Link>
-  </div>
+    <MediaBackground 
+      overlay={
+        <MediaBackgroundOverlay 
+          title="Sorry!"
+          body={<h2>Yous should not have ended up here!</h2>} />}
+      image={image} />
+    <Container fluid>
+      <EyeCatcher content={EYE_CATCHER_CONTENT} />
+    </Container>
+  </section>
 );

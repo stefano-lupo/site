@@ -15,23 +15,7 @@ h1 h2 h3 h4 h5 {
 .navbar .nav-link {
   text-transform: uppercase;
 }
-.hero {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  background-image: url(assets/img/header/airplane.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.hero h1 {
-  font-size: 500%;
-}
+
 #our-team .thumbnail {
   padding-bottom: 10%;
 }

@@ -18,50 +18,76 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { HOME, AIRCRAFT, ENGINES, TRANSACTIONS, PARTS_SUPPORT, CONTACT } from '../constants/Routes';
+import PresidioLogo from '../assets/img/logos/presidio-logo.png';
+import AelfLogo from '../assets/img/logos/aelf-logo.png';
+import PresidioLogoNavy from '../assets/img/logos/presidio-logo-navy.png';
+import AelfLogoNavy from '../assets/img/logos/aelf-logo-navy.png';
 
-import { HOME, TRANSACTIONS, PARTS_SUPPORT, CONTACT, ABOUT_US } from '../constants/Routes';
 
 const NAVBAR_DEFAULT_CLASS_NAME = "fixed-top";
 const MASTHEAD_UNSCROLLED_CLASS_NAME = `${NAVBAR_DEFAULT_CLASS_NAME} navbar-masthead`;
 
+const LOGO_HEIGHT = 75;
+
 export default class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+
     this.state = ({
-      navbarClassName: this.getNavbarClassName()
+      navbarClassName: this.getNavbarClassName(props.isMastheadPage)
     });
+
     this.updateNavbarClassState = this.updateNavbarClassState.bind(this);
   }
 
   componentDidMount() {
     if (this.props.isMastheadPage) {
+      console.log("Adding scroll listener for masthead page")
       window.addEventListener('scroll', this.updateNavbarClassState)
     }
   }
 
-  getNavbarClassName() {
-    return  window.pageYOffset <= 0 ? MASTHEAD_UNSCROLLED_CLASS_NAME : NAVBAR_DEFAULT_CLASS_NAME;
+  getNavbarClassName(isMastHeadPage) {
+    const isAtTopOfPage = window.pageYOffset <= 0;
+    return isMastHeadPage && isAtTopOfPage ? 
+      MASTHEAD_UNSCROLLED_CLASS_NAME : 
+      NAVBAR_DEFAULT_CLASS_NAME
   }
 
   updateNavbarClassState() {
     this.setState({
-      navbarClassName: this.getNavbarClassName()
+      navbarClassName: this.getNavbarClassName(this.props.isMastheadPage)
     });
   }
 
   render() {
     const { navbarClassName } = this.state;
+
     return (
       <Navbar collapseOnSelect className={navbarClassName} expand="lg">
         <LinkContainer to={HOME}>
-          <Navbar.Brand href="/">AELF Inc.</Navbar.Brand>
+          {/* <Navbar.Brand href="/">AELF Inc.</Navbar.Brand> */}
+          <Navbar.Brand>
+            <Image
+              alt="Presidio Logo"
+              src={PresidioLogoNavy}
+              height={LOGO_HEIGHT}
+              className="d-inline-block align-top"
+            />
+          </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
-            <LinkContainer to={ABOUT_US}>
+          <LinkContainer to={HOME}>
               <Nav.Link>About Us</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to={AIRCRAFT}>
+              <Nav.Link>Aircraft</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to={ENGINES}>
+              <Nav.Link>Engines</Nav.Link>
             </LinkContainer>
             <LinkContainer to={TRANSACTIONS}>
               <Nav.Link>Transactions</Nav.Link>
@@ -73,15 +99,16 @@ export default class NavigationBar extends React.Component {
               <Nav.Link>Contact</Nav.Link>
             </LinkContainer>
           </Nav>
-          <Nav.Link href="https://www.facebook.com/presidioaircraft">
-            <FontAwesomeIcon icon={['fab', 'facebook']} />
-          </Nav.Link>
-          <Nav.Link href="https://twitter.com/PresidioAir">
-            <FontAwesomeIcon icon={['fab', 'twitter']} />
-          </Nav.Link>
-          <Nav.Link href="https://www.linkedin.com/company/presidio-aircraft-leasing">
-            <FontAwesomeIcon icon={['fab', 'linkedin']} />
-          </Nav.Link>
+          <LinkContainer to={HOME}>
+            <Navbar.Brand>
+              <Image
+                alt="AELF Logo"
+                src={AelfLogoNavy}
+                height={LOGO_HEIGHT}
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
+          </LinkContainer>
         </Navbar.Collapse>
       </Navbar>
     );
@@ -93,5 +120,5 @@ NavigationBar.propTypes = {
 }
 
 NavigationBar.defaultProps = {
-  isMastheadPage: false
+  isMastheadPage: true
 }

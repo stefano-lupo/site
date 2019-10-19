@@ -2,18 +2,36 @@
 $NAVY_DARK: rgba(0, 16, 33, 1);
 
 
-$NAVY: rgba(61, 90, 128, 1);
-$NAVY_TRANSPARENT: rgba(61, 90, 128, 0.5);
+// $NAVY: rgba(61, 90, 128, 1);
+// $NAVY_TRANSPARENT: rgba(61, 90, 128, 0.5);
 
-$GRAY: rgba(124, 158, 178, 1);
-$GRAY_TRANSPARENT: rgba(124, 158, 178, 0.5);
-$BLUE: rgba(39, 93, 173, 1);
+$NAVY: #19396d;
+// $NAVY_TRANSPARENT: rgba(0, 0, 0, 0.5);
+
+// $GRAY: rgba(124, 158, 178, 1);
+// $GRAY_TRANSPARENT: rgba(124, 158, 178, 0.5);
+$GRAY: rgba(245,245,245, 1);
+// $GRAY_TRANSPARENT: rgba(0, 0, 0, 0.2);
+
+// $BLUE: rgba(39, 93, 173, 1);
+$BLUE: #6cb1d1;
+
+$PURPLE: #ad8db2;
+
+$PAGE_BG: white;
+
 
 $PRIMARY: $NAVY;
-$SECONDARY: $GRAY;
+$SECONDARY: $PURPLE;
 $TRANSPARENT: rgba(0, 0, 0, 0);
+$NAVGAR_BG: white;
+$NAVBAR_TEXT: $PRIMARY;
 
-$FLUID_MAX_WIDTH: 1200px;
+$FLUID_MAX_WIDTH: 1920px;
+$NAVBAR_HEIGHT: 76px;
+
+$MEDIA_FONT_SIZE_BP: 800px;
+$CONTAINER_MAX_WIDTH: 1600px;
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap');
@@ -21,30 +39,36 @@ $FLUID_MAX_WIDTH: 1200px;
 /* Global */
 body {
   margin: 0;
+  padding-top: $NAVBAR_HEIGHT;  /* Actual height of nav is 63px */
   font-family: 'Darker Grotesque', sans-serif;
   font-size: 1.3em;
   // background-color: $GRAY;
   overflow-x: hidden;
-}
-
-section {
-  padding-bottom: 5%;
+  background-color: $PAGE_BG;
 }
 
 
 h1, h2, h3, h4, h5 {
   text-transform: uppercase;
   color: $PRIMARY;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 b {
-  color: $GRAY;
+  color: $SECONDARY;
 }
 
-@media (min-width: 1400px) {
+ul li:before {
+  font-family: 'FontAwesome';
+  content: '\f067';
+  margin:0 5px 0 -15px;
+  color: #f00;
+  list-style-type: none; 
+}
+
+@media (min-width: $CONTAINER_MAX_WIDTH) {
   .container {
-    max-width: 1400px;
+    max-width: $CONTAINER_MAX_WIDTH !important;
   }
 }
 
@@ -68,11 +92,19 @@ b {
 }
 
 a {
-  color: $BLUE;
+  color: $PRIMARY;
+}
+
+a:hover {
+  color: $SECONDARY;
 }
 
 hr {
   color: $GRAY;
+}
+
+.container {
+  max-width: $CONTAINER_MAX_WIDTH;
 }
 
 
@@ -80,106 +112,216 @@ hr {
 /* Navbar */
 .navbar {
   // margin-bottom: 50px;
-  background-color: $GRAY;
+  // background-color: rgba(0, 0, 0, 0.4);
+  background-color: $NAVGAR_BG;
   -webkit-transition: background-color 0.3s ease-in-out; /* Safari prior 6.1 */
   transition:  background-color 0.3s ease-in-out;
-
 
   .nav-link {
     text-transform: uppercase;
   }
 
   a {
-    color: white;
+    color: $NAVBAR_TEXT;
+    font-weight: 700;
   }
 
   .navbar-brand {
-    color: white;
+    color: $NAVBAR_TEXT;
   }
+
 }
 
 .navbar-light .navbar-nav .nav-link {
-  // color: white;
-  color: white;
+  color: $NAVBAR_TEXT;
+
+  :hover {
+    border-bottom: solid white 1px;
+  }
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  color:  $NAVBAR_TEXT;
+  border-bottom: solid $NAVBAR_TEXT 1px;
 }
 
 .navbar-masthead {
-  background-color: $TRANSPARENT;
+  background-color: $NAVGAR_BG;
   -webkit-transition: background-color 0.3s ease-in-out; /* Safari prior 6.1 */
   transition:  background-color 0.3s ease-in-out;
 }
 
-.masthead {
-  position: relative;
-  width: 100%;
-  height: auto;
-  min-height: 35rem;
-  padding: 15rem 0;
-  // background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.3)), color-stop(75%, rgba(22, 22, 22, 0.7)), to(#161616)), url(assets/img/header/airplane-wing.jpg);
-  // background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url(assets/img/header/airplane-wing-bw-tint.jpg);
-  background-image:  url(assets/img/header/airplane-wing-bw.jpg);
-  // background-image:  url(assets/img/header/airplane-wing.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-  margin-bottom: 5%;
+
+/* Used for media atm */
+.masthead-correction {
+  // margin-top: -$NAVBAR_HEIGHT;
 }
 
-.masthead h1 {
-  // font-family: 'Varela Round';
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  letter-spacing: 0.8rem;
-  // background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-  // -webkit-text-fill-color: transparent;
-  // -webkit-background-clip: text;
+/* Background media */
+.media-container {
+
+  // -ms-overflow-style: none;  // IE 10+
+  // scrollbar-width: none;  // Firefox
+
+  // ::-webkit-scrollbar { 
+  //   display: none;  // Safari and Chrome
+  // }
+
+  .media {
+    top: 0;
+    left: 0;
+    z-index: -3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // filter: blur(2px);
+    // -webkit-filter: blur(2px);
+  }
+  
+  .media-overlay {
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-between;
+    text-align: left;
+    height: 70vh;
+    padding: 2%;
+    overflow-y: scroll;
+    text-shadow: 2px 2px 2px #19396d;
+
+    .overlay-wrapper {
+      max-width: $CONTAINER_MAX_WIDTH;
+      align-self: center;
+      // border: solid red 1px;
+    }
+
+    a {
+      color: white;
+    }
+
+    h2 {
+      font-weight: 300;
+    }
+
+    /**************
+     TODO: Hide scroll bar on transactions page
+    ***************/
+
+
+    // ::-webkit-scrollbar {
+    //   width: 0px;  /* Remove scrollbar space */
+    //   background: transparent;  /* Optional: just make scrollbar invisible */
+    //   }
+    //   /* Optional: show position indicator in red */
+    //   ::-webkit-scrollbar-thumb {
+    //       background: #FF0000;
+    //   }
+
+    .header-wrapper {
+      display: inline-block;
+      
+      @media(max-width: $MEDIA_FONT_SIZE_BP) {
+        h1 {
+          font-size: 90%;
+        }
+      }
+    }
+
+    .body-wrapper {
+      @media(max-width: MEDIA_FONT_SIZE_BP) {
+        h2 {
+          font-size: 100%;
+        }
+
+        p {
+          font-size: 60%;
+        }
+      }
+    }
+  }
+
+  h1, h2, p {
+    color: white;
+  }
+
+  hr {
+    // max-width: 400px;
+    // max-width: 85%;
+    border: solid rgba(255, 255, 255, 1) 1px;
+    
+  }
+}
+
+
+/* Eye Catcher */
+.eye-catcher-container {
+  background-color: white;
   color: white;
+  // text-align: center;
+  padding: 5%;
+  font-size: 130%;
+  // border-top: solid 2px black;
+  // border-bottom: solid 2px black;
+  
+  h1, h2, h3, p {
+    color: $PRIMARY;
+  }
+   
 }
 
-.masthead h2 {
-  max-width: 20rem;
-  font-size: 1rem;
-}
+.split-images {
+  .split-image-column {
+    color: white;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 
-@media (min-width: 768px) {
-  .masthead h1 {
-    font-size: 4rem;
-    line-height: 4rem;
+    .split-image-content {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 5%;
+
+      p {
+        font-size: 100%;
+      }
+    }
+
+    h4 {
+      font-size: 250%;
+      padding-top: 5%;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
   }
 }
-
-@media (min-width: 992px) {
-  .masthead {
-    height: 100vh;
-    padding: 0;
-  }
-  .masthead h1 {
-    font-size: 6.5rem;
-    line-height: 6.5rem;
-    letter-spacing: 0.8rem;
-  }
-  .masthead h2 {
-    max-width: 30rem;
-    font-size: 1.25rem;
-  }
-}
-
-
 
 /* presidio-aelf */
 #presidio-aelf{
-  // max-width: $FLUID_MAX_WIDTH;
-  text-align: center;
+  text-align: left;
 
   .card-title {
     text-transform: uppercase;
     font-size: 120%;
     color: $PRIMARY;
-    border-bottom: solid $GRAY 1px;
+    // border-bottom: solid $GRAY 1px;
     padding-bottom: 4%;
   }
 
+  .combined-logos {
+    max-width: 300px;
+    float: right;
+  }
   .card img {
     // padding: 1vh 5vh;
     // max-width: 500px;
@@ -204,18 +346,59 @@ hr {
   
   .counting-stat {
     font-size: 300%;
+    color: $PRIMARY;
+    font-weight: 600;
+  }
+}
+
+/* World Map */
+#world-map {
+  padding: 5% 0;
+  .map-wrapper {
+    // min-height: 600px;
+    width: 900px;
+    // margin: 2%;
+    // padding: 10% 0;
+    // border: solid red 1px;
+  }
+  
+  .jvectormap-container {
+    background-color:  $PAGE_BG !important;
   }
 }
 
 
 
-/* World Map */
-.map-wrapper {
-  min-height: 31vh;
+/* Mission Statement Words */
+#mission-statement-words {
+  background-image: url('./assets/img/home/mission-statement.jpg');
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 70vh;
+  display: flex;
+  align-content: center;
+  align-items: center;
+
+  p, h2 {
+    color: white;
+  }
+
+  p {
+    font-size: 150%;
+  }
+
+  h2 {
+    font-size: 250%;
+  }
 }
 
-.jvectormap-container {
-  background-color: $GRAY !important;
+  
+@media(max-width: 600px) {
+  #mission-statement-words {
+    background-position: center bottom;
+  }
 }
 
 /* Mission Statement */
@@ -224,7 +407,7 @@ hr {
   margin-bottom: 5%;
 
   .icon {
-    color: $NAVY;
+    color: $BLUE;
   }
 
   .statement-text {
@@ -245,13 +428,13 @@ hr {
 #services {
 
   button {
-    background-color: $GRAY_TRANSPARENT;
+    // background-color: $GRAY_TRANSPARENT;
     color: white;
   }
 
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: white;
-    background-color: $NAVY_TRANSPARENT;
+    // background-color: $NAVY_TRANSPARENT;
     font-weight: bold;
     text-decoration: none !important;
   }
@@ -268,7 +451,7 @@ hr {
     // background-image: url(assets/img/plane-stock-blur.jpg);
     // background-image: url(assets/img/plane-wing-astro-denoised.jpg);
     // background-image: url(assets/img/plane-sun.jpg);
-    background-image: url(assets/img/plane-sun-darkened.jpg);
+    // background-image: url(assets/img/plane-sun-darkened.jpg);
     background-position: top;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -398,116 +581,279 @@ hr {
 
 }
 
+/* Aircraft */
+#aircraft {
+ 
+}
 
-/* Transactions */
-#transactions {
-  h1 {
-    font-size: 3em;
-    text-align: center;
-    padding: 1% 0;
-  }
-
-  h2 {
-    font-size: 2.5em;
-  }
-
-  p {
-    font-size: 1.3em;
-    margin-bottom: 0;
-  }
-
-  .year {
-    margin-bottom: 2%;
-  }
-
-  .col-md-6 {
-    padding: 0 0;
-  }
-
-  .container-fluid {
-    padding-bottom: 0;
-  }
-  
-  .light-row {
-    background-color: white;
-  }
-
-  .dark-row {
-    background-color: $PRIMARY;
-    color: white;
-
-    h2 {
-      color: white;
-    }
-  }
-
-  .info-column {
-    padding: 2vw 2vw;
-    max-height: 576px;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .partner-logo {
-    max-height: 80px;
+#engines {
+  .basic-content {
+    background-color: $GRAY;
+    padding: 5% 0;
   }
 }
 
+/* Alternating column */
+.even-row {
+  background-color: $GRAY;
+}
+
+.odd-row {
+  background-color: $PRIMARY;
+  color: white;
+
+  
+  h2 {
+    color: white;
+  }
+}
+.alternating-column-row {
+
+  // padding: 5% 0%;
+  font-size: 120%;
+
+  .alternating-column-image-column {
+    position: relative;
+    padding: 0;
+
+  }
+// .triangle-image-column-left:before {
+//     content: '';
+//     position: absolute;
+//     top: 0; right: 0;
+//     border-top: 80px solid white;
+//     border-left: 80px solid transparent;
+//     width: 0;
+// }
+
+// .triangle-image-column-left:after {
+//     content: '';
+//     position: absolute;
+//     top: 100%; right: 0;
+//     border-bottom: 80px solid white;
+//     border-left: 80px solid transparent;
+//     width: 0;
+//     transform: translateX(-50%);
+//     transform: translatey(-100%)
+// }
+
+// .triangle-image-column-right:before {
+//     content: '';
+//     position: absolute;
+//     top: 0; left: 0;
+//     border-top: 80px solid white;
+//     border-right: 80px solid transparent;
+//     width: 0;
+// }
+
+// .triangle-image-column-right:after {
+//     content: '';
+//     position: absolute;
+//     top: 100%; left: 0;
+//     border-bottom: 80px solid white;
+//     border-right: 80px solid transparent;
+//     width: 0;
+//     transform: translatey(-100%)
+// }
+
+  .alternating-column-content-column {
+    display: flex;
+    // align-items: flex-start;
+    align-items: center;
+    padding: 0% 3%;
+  }
+
+  image {
+    padding: 0;
+    margin: 0;
+  }
+
+
+}
+
+/* Transactions */
+// #transactions {
+//   padding-bottom: 0;
+
+//   .transactions-body {
+
+//     hr  {
+//       border-color: transparent;
+//     }
+
+//     @media(max-width: 900px) {
+//       hr {
+//           border-color: $GRAY_TRANSPARENT;
+//           width: 100%;
+//       } 
+//     }
+
+//     h1 {
+//       font-size: 3em;
+//       text-align: center;
+//       padding: 1% 0;
+//     }
+
+//     h2 {
+//       font-size: 2.5em;
+//     }
+
+//     p {
+//       font-size: 1.3em;
+//       margin-bottom: 0;
+//     }
+
+//     .year {
+//       margin-bottom: 2%;
+//     }
+
+//     .col-md-6 {
+//       padding: 0 0;
+//     }
+
+//     .container-fluid {
+//       padding-bottom: 0;
+//     }
+    
+//     .light-row {
+//       background-color: white;
+//     }
+
+//     .dark-row {
+//       background-color: $PRIMARY;
+//       color: white;
+
+//       h2 {
+//         color: white;
+//       }
+//     }
+
+//     .info-column {
+//       padding: 2vw 2vw;
+//       max-height: 576px;
+//       justify-content: center;
+//       align-content: center;
+//       align-items: center;
+//       display: flex;
+//       flex-direction: column;
+//     }
+
+//     .partner-logo {
+//       margin-top: 2%;
+//       max-height: 80px;
+//     }
+//   }
+// }
+
+/* Transactions */
+#transactions {
+  padding-bottom: 0;
+  // border: solid green 1px; 
+  #transaction-media-overlay {
+    height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: stretch;
+    // justify-content: stretch;
+    // align-content: stretch;
+    // align-self: stretch;
+    // border: solid red 1px;
+    
+    img {
+      // border: solid red 1px;
+    }
+
+    h1 {
+      font-size: 300%;
+    }
+    .transaction-row {
+      margin: 5% 0;
+      // border: solid blue 1px;
+      // display: flex;
+      // // flex-wrap: wrap;
+      // // flex-direction: row;
+      // justify-content: center;
+      // align-content: center;
+      // align-items: stretch;
+    }
+
+    .transaction-col {
+      // border: solid red 1px;
+      display: flex;
+      align-items: center;
+      align-content: flex-end;
+      justify-content: center;
+    }
+  }
+}
+
+
+/* Contact Us */
+#contact-us {
+  padding-bottom: 4%;
+  .locations {
+    line-height: 70%;
+  }
+
+  #contact-us-content {
+    a {
+      color: $PRIMARY;
+    }
+  }
+}
 
 /* Footer */
 footer {
   background-color: $NAVY;
   padding: 1% 0 0 0;
   color: white;
+  text-align: left;
 
   .column {
     padding: 1%;
   }
-
-  img {
-    padding: 10% 0;
+  .logo-col {
+    text-align: center;
+    padding: 2% 0;
   }
-  // flex: <grow> <shrink> <basis>
-  // .partners-wrapper {
-  //   display: flex;
-  //   flex-direction: column;
-  //   flex: 0 2 auto;
-  //   // justify-content: center;
-  //   // align-items: center;
-  // }
-
-  // .partners {
-  //   // flex: 5 0 auto;
-  //   // align-self: center;
-  //   // flex-grow: 1;
-  //   margin-top: auto;
-  //   margin-bottom: auto;
-  // }
+  .partner-image {
+    max-height: 100px;
+  }
 
   .contact-info {
     flex: 2 0 auto;
   }
 
-  h3, hr {
+  h3 {
     color: white;
   }
 
+  hr {
+    border-color: transparent;
+  }
+
   a {
-    color: $NAVY_DARK;
-    text-decoration: underline;
-    font-weight: bold;
+    color: white;
+    // text-decoration: underline;
+  }
+
+  .contact-icon-wrapper {
+    .icon-margin {
+      margin: 0 0 0 15px;
+    }
+  }
+
+  .social-icon-wrapper {
+    .icon-margin {
+      margin: 0 15px 0 0;
+    }
   }
 }
 
 /* Copyright */
 #copyright {
-  display: flex;
-  // align-content: space-around;
-  // justify-content: space-around;
   padding: 0.5% 0;
+  text-align: center;
 }
 
 
