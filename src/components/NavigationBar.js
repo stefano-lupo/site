@@ -19,8 +19,11 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { HOME, AIRCRAFT, ENGINES, TRANSACTIONS, PARTS_SUPPORT, CONTACT } from '../constants/Routes';
-import PresidioLogo from '../assets/img/logos/presidio-purple-logo.png';
-import AelfLogo from '../assets/img/logos/aelf-purple-logo.png';
+import PresidioLogo from '../assets/img/logos/presidio-logo.png';
+import AelfLogo from '../assets/img/logos/aelf-logo.png';
+import PresidioLogoNavy from '../assets/img/logos/presidio-logo-navy.png';
+import AelfLogoNavy from '../assets/img/logos/aelf-logo-navy.png';
+
 
 const NAVBAR_DEFAULT_CLASS_NAME = "fixed-top";
 const MASTHEAD_UNSCROLLED_CLASS_NAME = `${NAVBAR_DEFAULT_CLASS_NAME} navbar-masthead`;
@@ -68,7 +71,7 @@ export default class NavigationBar extends React.Component {
           <Navbar.Brand>
             <Image
               alt="Presidio Logo"
-              src={PresidioLogo}
+              src={PresidioLogoNavy}
               height={LOGO_HEIGHT}
               className="d-inline-block align-top"
             />
@@ -100,7 +103,7 @@ export default class NavigationBar extends React.Component {
             <Navbar.Brand>
               <Image
                 alt="AELF Logo"
-                src={AelfLogo}
+                src={AelfLogoNavy}
                 height={LOGO_HEIGHT}
                 className="d-inline-block align-top"
               />

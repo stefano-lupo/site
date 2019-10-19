@@ -13,6 +13,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { CONTACT } from '../../constants/Routes';
 import Partners from './Partners';
+import PresidioLogo from '../../assets/img/logos/full-presidio-logo.png'
+import AelfLogo from '../../assets/img/logos/full-aelf-logo.png'
 
 const FACEBOOK_URL = 'https://www.facebook.com/presidioaircraft';
 const LINKEDIN_URL = 'https://www.linkedin.com/company/presidio-aircraft-leasing';
@@ -65,12 +67,22 @@ export default () => {
             {contactIconLink(CONTACT, "tools", "Parts Support")}
             {contactIconLink(CONTACT, "handshake", "Sales Contacts")}
           </Col>
-          <Col md={4} className="text-center">
-            <h3>Our Partners</h3>
+          <Col md={4}>
+            <Row>
+              <Col className="logo-col">
+                <Image src={AelfLogo} fluid/>
+              </Col>
+            </Row>
+            <Row>
+              <Col  className="logo-col">
+                <Image src={PresidioLogo} fluid/>
+              </Col>
+            </Row>
+            {/* <h3>Our Partners</h3>
             <hr />
-            <Partners />
+            <Partners /> */}
           </Col>
-          <Col md={4} className="text-right">
+          <Col md={{span: 4}} className="text-right">
             <h3>Get in Touch</h3>
             <hr />
             {socialMediaIconLink(FACEBOOK_URL, ['fab', 'facebook'], "Presidio Aircraft")}

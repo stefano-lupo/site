@@ -11,12 +11,16 @@ import NavigationBar from '../components/NavigationBar';
 
 import MediaBackground from '../components/MediaBackground';
 
-import image from '../assets/img/header/header-standin-wing.jpg';
+// import image from '../assets/img/faded.png';
+import imageFadeBottom from '../assets/img/home/mission-statement.jpg';
+import imageFaded from '../assets/img/faded.png'
+import imageFadedMirror from '../assets/img/faded-mirror.png'
 import MediaBackgroundOverlay from '../components/MediaBackgroundOverlay';
 import AlternatingColumns from '../components/AlternatingColumns';
 import EyeCatcher from '../components/EyeCatcher';
 
 const EYE_CATCHER_CONTENT = {
+  title: <h1>Aircraft Solutions</h1>,
   body: 
     <p>
       Our group provides aircraft leasing and financing solutions to a variety of airlines across the globe. We lease aircraft to airlines across the globe, from well-established airlines to dynamic start-ups. We have extensive experience engineering financial structures that help airlines respond to growth opportunities or persevere through more challenging times. Given our flexibility, we can structure aircraft sale, leasing or financing that matches your fleet strategy. 
@@ -26,7 +30,7 @@ const EYE_CATCHER_CONTENT = {
 
 const CONTENT = [
   {
-    image: image,
+    image: imageFaded,
     title: "Aircraft Fleet Solutions ",
     body: 
       <p>
@@ -35,7 +39,7 @@ const CONTENT = [
       </p>
   },
   {
-    image: image,
+    image: imageFadedMirror,
     title: "Aircraft Trading",
     body: 
       <p>
@@ -43,7 +47,7 @@ const CONTENT = [
       </p>
   },
   {
-    image: image,
+    image: imageFaded,
     title: "Technical Support",
     body: 
       <p>
@@ -60,7 +64,7 @@ export default () => (
         <MediaBackgroundOverlay 
           title="Aircraft Solutions"
           body={<h2>A capital structure that provides investment flexibility</h2>} />}
-      image={image} />
+      image={imageFadeBottom} />
     <Container fluid>
       <EyeCatcher content={EYE_CATCHER_CONTENT} />
       <AlternatingColumns rows={CONTENT} />

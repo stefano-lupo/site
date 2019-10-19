@@ -33,15 +33,12 @@ export default class EyeCatcher extends React.Component {
     const { title, body } = this.props.content;
 
     return (
-
-      <Container className="eye-catcher-container">
-        <Row>
-          <Col>
-            { renderTitle(title) }
-            { renderBody(body) }
-          </Col>
-        </Row>
-      </Container>
+      <Row>
+        <Col className="eye-catcher-container">
+          { renderTitle(title) }
+          { renderBody(body) }
+        </Col>
+      </Row>
     )
   }
 }

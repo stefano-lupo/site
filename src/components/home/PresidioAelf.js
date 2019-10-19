@@ -11,7 +11,7 @@ import {
 
 import PresidioLogo from '../../assets/img/logos/presidio-black-logo.png';
 import AelfLogo from '../../assets/img/logos/aelf-black-logo.png';
-import JoinedLogo from '../../assets/img/logos/combined-logos.png';
+import JoinedLogo from '../../assets/img/logos/combined-logos-navy.png';
 
 // const PresidioAelf = () => 
 //   <Container>

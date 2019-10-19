@@ -14,6 +14,7 @@ import MediaBackground from '../components/MediaBackground';
 import MediaBackgroundOverlay from '../components/MediaBackgroundOverlay';
 
 import image from '../assets/img/header/header-standin-wing.jpg';
+import video from '../assets/video/homepage.mp4';
 
 // const OLD_HOME_PAGE = 
 //   <div>
@@ -45,10 +46,10 @@ export default class Home extends React.Component {
           overlay={
             <MediaBackgroundOverlay 
               title="AELF & Presidio" 
-              body={<h2>We are a full-service commercial aircraft leasing group</h2>} 
+              body={<h2>A full-service commercial aircraft leasing group</h2>} 
             />
           }
-          image={image} /> 
+          video={video} /> 
         <PresidioAelf />
         <MissionStatementWords />
         {/* <Services /> */}

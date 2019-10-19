@@ -38,24 +38,27 @@ import PartsSupport from './pages/PartsSupport';
 import Contact from './pages/Contact';
 import Lost from './pages/Lost';
 import Footer from './components/footer/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faChartLine, faCreditCard, faLightbulb, faPeopleCarry, faBrain, faUserTie, faCopyright, faPhone, faLocationArrow, faBuilding, faHandshake, faTools);
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Switch>
-          <Route exact path={HOME} component={Home} />
-          <Route path={AIRCRAFT} component={Aircraft} />
-          <Route path={ENGINES} component={Engines} />
-          <Route path={TRANSACTIONS} component={Transactions} />
-          <Route path={PARTS_SUPPORT} component={PartsSupport} />
-          <Route path={CONTACT} component={Contact} />
-          <Route component={Lost} />
-        </Switch>
-        <Footer />
-      </div>
+      <ScrollToTop>
+        <div className="App">
+          <Switch>
+            <Route exact path={HOME} component={Home} />
+            <Route path={AIRCRAFT} component={Aircraft} />
+            <Route path={ENGINES} component={Engines} />
+            <Route path={TRANSACTIONS} component={Transactions} />
+            <Route path={PARTS_SUPPORT} component={PartsSupport} />
+            <Route path={CONTACT} component={Contact} />
+            <Route component={Lost} />
+          </Switch>
+          <Footer />
+        </div>
+      </ScrollToTop>
     </BrowserRouter>
   );
 }

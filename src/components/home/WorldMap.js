@@ -36,8 +36,8 @@ const regions = [
   "IE", "IT"
 ]
 
-const INITIAL_COLOR = '#0a1428';
-const SELECTED_COLOR = '#0FA3B1';
+const INITIAL_COLOR = '#19396d';
+const SELECTED_COLOR = '#ad8db2';
 
 const regionStlye = {
   initial: {
@@ -45,7 +45,7 @@ const regionStlye = {
     'fill-opacity': 1,
   },
   hover: {
-    fill: 'red'
+    fill: '#6cb1d1'
   },
   selected: {
     fill: SELECTED_COLOR,
@@ -63,38 +63,50 @@ const containerStyle = {
   height: '100%',
 }
 
-const settings = {
-  regionStlye,
-  regionLabelStyle,
-  containerStyle,
-  zoomOnScroll: false,
-  panOnDrag: false
-}
-
 export default class WorldMap extends React.Component {
   render() {
     return (
-      <section id="world-map">
-        <h1 className="text-center">Expeirenced Worldwide</h1>
+      <Container id="world-map">
         <Row>
-          <Col className="map-wrapper">
-              <VectorMap 
-                map={'world_mill'} 
-                ref="map"
-                selectedRegions={regions}
-                // markers={MARKERS}
-                containerClassName="map"
+          <Col md={4}>
+            <h1>Experienced Worldwide</h1>
+            <p>Deserunt proident proident irure ad eiusmod veniam. Non consectetur tempor fugiat culpa commodo voluptate. Amet laboris proident occaecat consequat eu culpa proident ex pariatur officia nisi. Id nostrud tempor commodo non esse nisi.</p>
+            Deserunt proident proident irure ad eiusmod veniam. Non consectetur tempor fugiat culpa commodo voluptate. Amet laboris proident occaecat consequat eu culpa proident ex pariatur officia nisi. Id nostrud tempor commodo non esse nisi.
+          </Col>
+          <Col md={{span: 6, offset: 2}} className="map-wrapper">
+          <VectorMap 
+                  map={'world_mill'} 
+                  ref="map"
+                  selectedRegions={regions}
+                  // markers={MARKERS}
+                  containerClassName="map"
 
-                containerStyle={containerStyle}
-                regionLabelStyle={regionLabelStyle}
-                regionStyle={regionStlye}
-                zoomOnScroll={false}
-                panOnDrag={false}
-            />
+                  containerStyle={containerStyle}
+                  regionLabelStyle={regionLabelStyle}
+                  regionStyle={regionStlye}
+                  zoomOnScroll={false}
+                  panOnDrag={false}
+                  zoomButtons={false}
+              />
           </Col>
         </Row>
-      </section>
+      </Container>
     );
   }
 }
 
+/*
+<VectorMap 
+                  map={'world_mill'} 
+                  ref="map"
+                  selectedRegions={regions}
+                  // markers={MARKERS}
+                  containerClassName="map"
+
+                  containerStyle={containerStyle}
+                  regionLabelStyle={regionLabelStyle}
+                  regionStyle={regionStlye}
+                  zoomOnScroll={false}
+                  panOnDrag={false}
+              />
+              */
